@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Malavika · Product × Data × Workflows</title>
+<meta name="description" content="Malavika, product-minded professional from healthcare operations. Product thinking, data, workflows. Chennai, India."/>
+<meta name="theme-color" content="#F6F0E1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============ 1. TOKENS, RESET, PAPER ============ */
+:root{
+  --paper:#F6F0E1; --paper2:#FBF7EC; --card:#FFFDF6;
+  --ink:#22201B; --ink-soft:rgba(34,32,27,.66); --ink-faint:rgba(34,32,27,.14);
+  --blue:#2B49C7; --amber:#9A6A00; --green:#2E7A4F; --pink:#C13B60; --red:#C74B2E;
+  --yellow:#E9B93B; --pinkB:#D94F72; --greenB:#5FA37C; --blueB:#6E86E0;
+  --disp:'Anton',Impact,sans-serif; --body:'Space Grotesk',sans-serif;
+  --hand:'Caveat',cursive; --mono:'Space Mono',monospace;
+  --wob1:255px 15px 225px 15px / 15px 225px 15px 255px;
+  --wob2:18px 225px 18px 255px / 255px 18px 225px 18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  font-family:var(--body);color:var(--ink);line-height:1.6;overflow-x:hidden;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 35px,var(--ink-faint) 35px,var(--ink-faint) 36px);
+  -webkit-font-smoothing:antialiased;
+}
+/* red notebook margin line */
+body::before{content:'';position:fixed;top:0;bottom:0;left:88px;width:1.5px;background:rgba(199,75,46,.3);z-index:-1}
+@media(max-width:640px){body::before{left:22px}}
+/* subtle paper grain */
+body::after{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");}
+.binder-holes{position:fixed;left:26px;top:0;bottom:0;z-index:-1;display:none}
+.binder-holes span{position:absolute;left:0;width:16px;height:16px;border-radius:50%;
+  background:#E3DAC2;box-shadow:inset 0 2px 3px rgba(0,0,0,.22),0 1px 0 rgba(255,255,255,.55)}
+.binder-holes span:nth-child(1){top:18%}.binder-holes span:nth-child(2){top:49%}.binder-holes span:nth-child(3){top:80%}
+@media(min-width:1200px){.binder-holes{display:block}}
+::selection{background:var(--yellow);color:var(--ink)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--blue);outline-offset:3px;border-radius:2px}
+.skip{position:fixed;top:-60px;left:16px;z-index:400;background:var(--ink);color:var(--paper);padding:.7em 1.2em;font-family:var(--mono);font-size:.75rem;transition:top .2s}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ 2. UTILITIES ============ */
+.wrap{max-width:1140px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+.hand{font-family:var(--hand);font-weight:600}
+.mono{font-family:var(--mono)}
+.hl{padding:.06em .18em;margin:0 -.04em;border-radius:.15em;background-image:linear-gradient(100deg,transparent 0%,var(--hl) 3%,var(--hl) 97%,transparent 100%)}
+.hl-y{--hl:rgba(233,185,59,.55)}.hl-p{--hl:rgba(217,79,114,.28)}.hl-b{--hl:rgba(43,73,199,.2)}.hl-g{--hl:rgba(62,142,98,.25)}
+.circled{display:inline-block;border:2px solid var(--red);border-radius:48% 52% 55% 45% / 55% 45% 52% 48%;padding:.12em .5em;transform:rotate(-3deg);color:var(--red)}
+.a-blue{--acc:#2B49C7;--accbg:rgba(43,73,199,.1)} .a-amber{--acc:#9A6A00;--accbg:rgba(233,185,59,.25)}
+.a-green{--acc:#2E7A4F;--accbg:rgba(62,142,98,.14)} .a-pink{--acc:#C13B60;--accbg:rgba(217,79,114,.13)} .a-red{--acc:#C74B2E;--accbg:rgba(199,75,46,.12)}
+/* tape */
+.tape{position:absolute;width:92px;height:24px;background:rgba(226,214,183,.62);border:1px solid rgba(34,32,27,.09);
+  clip-path:polygon(3% 8%,97% 0,100% 92%,0 100%);box-shadow:0 1px 2px rgba(34,32,27,.08)}
+.tape--l{top:-12px;left:22px;transform:rotate(-5deg)}
+.tape--r{top:-12px;right:22px;transform:rotate(4deg)}
+.tape--c{top:-13px;left:50%;transform:translateX(-50%) rotate(-2deg)}
+/* sticky note */
+.sticky{position:relative;width:104px;padding:13px 8px 16px;text-align:center;font-family:var(--hand);font-weight:700;font-size:1.3rem;line-height:1;
+  box-shadow:0 5px 12px rgba(34,32,27,.16);transform:rotate(var(--r,2deg));transition:transform .28s ease,box-shadow .28s ease}
+.sticky::after{content:'';position:absolute;right:0;bottom:0;border-style:solid;border-width:0 0 16px 16px;border-color:transparent transparent rgba(34,32,27,.14) transparent}
+.sticky:hover,.sticky:focus-visible{transform:rotate(calc(var(--r,2deg)*.2)) translateY(-5px) scale(1.04);box-shadow:0 14px 24px rgba(34,32,27,.2)}
+.sticky__tip{position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap;
+  font-family:var(--hand);font-weight:600;font-size:1rem;color:var(--ink-soft);opacity:0;transition:opacity .25s;pointer-events:none}
+.sticky:hover .sticky__tip,.sticky:focus-visible .sticky__tip{opacity:1}
+.sticky--y{background:#F5D66A;color:var(--ink)} .sticky--b{background:#2B49C7;color:var(--paper)}
+.sticky--p{background:#F5AFBF;color:var(--ink)} .sticky--g{background:#AEDAC0;color:var(--ink)}
+/* section shell */
+.sec{padding:clamp(72px,9vw,116px) 0;position:relative}
+.sec + .sec{border-top:1.5px dashed rgba(34,32,27,.16)}
+.sec--grid{background-image:repeating-linear-gradient(90deg,transparent 0,88px,rgba(34,32,27,.03) 88px,89px)}
+.sec-head{margin-bottom:clamp(36px,5vw,56px)}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:14px}
+.kicker::before{content:'';display:inline-block;width:34px;height:1.5px;background:currentColor;vertical-align:middle;margin-right:12px}
+.sec-title{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(2.1rem,4.8vw,3.5rem);line-height:.98;letter-spacing:.005em}
+.hand-title{font-family:var(--hand);font-weight:700;font-size:clamp(2.3rem,4.8vw,3.4rem);line-height:1.05}
+.sec-sub{margin-top:14px;font-size:1.05rem;color:var(--ink-soft);max-width:52ch}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.65em;font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;
+  padding:1em 1.6em;border:1.7px solid var(--ink);background:var(--card);color:var(--ink);text-decoration:none;cursor:pointer;
+  border-radius:4px;transition:transform .22s ease,box-shadow .22s ease,background .22s}
+.btn .ic{width:1.25em;height:.72em;flex:none}
+.btn--ink{background:var(--ink);color:var(--paper)}
+.btn--ghost{background:transparent}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn--big{font-size:.9rem;padding:1.2em 2.2em}
+.ic{width:1.2em;height:.7em}.ic--dn{width:.7em;height:1.1em}
+/* icons draw their stroke from currentColor */
+.sym{color:var(--acc,var(--ink))}
+/* reveal + hand-drawn line animations */
+.reveal{transition:opacity .65s ease var(--d,0s),transform .65s cubic-bezier(.25,.7,.25,1) var(--d,0s)}
+.js .reveal{opacity:0;transform:translateY(26px)}
+.js .reveal.in{opacity:1;transform:translateY(0)}
+.animsvg path[pathLength]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1s cubic-bezier(.3,.6,.3,1) .25s}
+.animsvg.in path[pathLength]{stroke-dashoffset:0}
+.tilt{transform:rotate(var(--r,0deg));transition:transform .3s ease,box-shadow .3s ease}
+/* handwritten annotation */
+.anno{font-family:var(--hand);font-weight:600;font-size:1.25rem;color:var(--ink-soft);line-height:1.25}
+
+/* ============ 3. NAV ============ */
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:160;width:min(1180px,calc(100% - 24px));
+  display:flex;align-items:center;gap:26px;padding:11px 18px;background:var(--paper2);
+  border:1.6px solid var(--ink);border-radius:4px;box-shadow:3px 3px 0 rgba(34,32,27,.1);transition:top .25s,padding .25s}
+.nav.scrolled{top:8px;padding:6px 16px}
+.nav__tape{position:absolute;top:-11px;width:58px;height:17px;background:rgba(226,214,183,.62);border:1px solid rgba(34,32,27,.09);
+  clip-path:polygon(4% 10%,96% 0,100% 90%,0 100%)}
+.nav__tape--l{left:34px;transform:rotate(-5deg)} .nav__tape--r{right:34px;transform:rotate(4deg)}
+.nav__logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+.nav__m{font-family:var(--disp);font-size:1.15rem;line-height:1;display:grid;place-items:center;width:34px;height:34px;
+  border:1.6px solid var(--ink);border-radius:3px;background:var(--yellow)}
+.nav__word{font-family:var(--disp);font-size:1rem;letter-spacing:.08em;display:none}
+.nav__links{display:flex;gap:clamp(14px,2vw,26px);margin-left:auto;list-style:none}
+.nav__links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-decoration:none;padding:6px 2px 8px;position:relative;transition:color .2s}
+.nav__links a::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:5px;opacity:0;transition:opacity .2s;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='6' viewBox='0 0 28 6'><path d='M1 4 C 7 1, 14 5, 27 2' fill='none' stroke='%23222' stroke-width='1.5'/></svg>") repeat-x}
+.nav__links a:hover{color:var(--blue)}
+.nav__links a:hover::after,.nav__links a.active::after{opacity:1}
+.nav__links a.active{color:var(--blue)}
+.nav__cta{margin-left:6px;font-size:.64rem;padding:.85em 1.2em}
+.nav__burger{display:none;margin-left:auto;background:none;border:1.6px solid var(--ink);border-radius:3px;width:40px;height:36px;
+  place-items:center;cursor:pointer;color:var(--ink)}
+.nav__burger svg{width:20px;height:14px}
+@media(max-width:940px){
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:grid}
+  .nav__word{display:inline}
+  .nav{gap:14px}
+}
+/* mobile menu */
+.menu{position:fixed;inset:0;z-index:150;background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 35px,var(--ink-faint) 35px,var(--ink-faint) 36px);
+  padding:120px clamp(24px,8vw,60px) 40px;visibility:hidden;opacity:0;transform:translateY(-12px);transition:.3s}
+body.menu-open .menu{visibility:visible;opacity:1;transform:none}
+.menu__nav{display:flex;flex-direction:column;gap:6px}
+.menu__nav a{display:flex;align-items:baseline;gap:16px;text-decoration:none;padding:12px 0;border-bottom:1.5px dashed rgba(34,32,27,.18);
+  font-family:var(--disp);font-size:2rem;letter-spacing:.02em}
+.menu__nav a span{font-family:var(--hand);font-size:1.2rem;color:var(--ink-soft);font-weight:600}
+.menu__nav a:hover{color:var(--blue)}
+.menu__cta{border-bottom:none;margin-top:18px;align-self:flex-start;background:var(--ink);color:var(--paper);padding:.5em .7em;border-radius:4px}
+
+/* ============ 4. HERO ============ */
+.hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px;position:relative}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);gap:clamp(28px,5vw,70px);align-items:center;width:100%}
+.hero-hello{font-size:clamp(1.6rem,2.6vw,2.2rem);color:var(--blue);margin-bottom:2px}
+.hero__namezone{position:relative;display:inline-block;padding:34px 0 30px}
+.hero-name{font-family:var(--disp);font-weight:400;font-size:clamp(3.2rem,9.6vw,8.4rem);line-height:.92;letter-spacing:.005em;cursor:default}
+.hero-name span{display:inline-block;transition:transform .38s cubic-bezier(.2,.85,.3,1.35)}
+.hero-name:hover span:nth-child(3n+1){transform:translateY(-7px) rotate(-4deg)}
+.hero-name:hover span:nth-child(3n+2){transform:translateY(5px) rotate(3deg)}
+.hero-name:hover span:nth-child(3n){transform:translateY(-9px) rotate(5deg) scale(1.02)}
+.hero-name:hover span:nth-child(4){transform:translateY(8px) rotate(-3.5deg)}
+.squiggle{width:min(320px,74%);margin-top:2px}
+.squiggle path{stroke:var(--blue);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s ease}
+.hero-name:hover + .squiggle path,.hero-name:focus-visible + .squiggle path{stroke-dashoffset:0}
+.hero-look{position:absolute;top:-6px;left:54%;color:var(--blue);font-size:1.3rem;display:flex;align-items:flex-start;gap:6px}
+.look-arr{width:64px;height:28px;margin-top:10px}
+.look-arr path{stroke:var(--blue);stroke-width:2.4;fill:none;stroke-linecap:round}
+.hero-stickies{position:absolute;inset:0;pointer-events:none}
+.hero-stickies .sticky{position:absolute;pointer-events:auto}
+.hs-1{top:-16px;right:-14px}.hs-2{bottom:-30px;left:-34px}.hs-3{top:-30px;left:6%}.hs-4{bottom:-8px;right:13%}
+.hero-line{font-size:clamp(1.35rem,2.7vw,2.15rem);font-weight:600;line-height:1.25;max-width:20ch;margin-top:8px}
+.hero-sub{margin-top:18px;color:var(--ink-soft);max-width:48ch;font-size:1rem}
+.hero-meta{margin-top:26px;font-size:.68rem;letter-spacing:.16em;color:var(--ink)}
+.hero-meta .dot{margin:0 12px;color:var(--red)}
+.hero-star{margin-top:8px;font-size:1.05rem;color:var(--red)}
+.hero-cta{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+.hero__side{justify-self:center;width:100%;max-width:360px}
+.polaroid{position:relative;background:#FFFDF6;border:1.6px solid var(--ink);padding:14px 14px 16px;
+  transform:rotate(3deg);box-shadow:5px 7px 0 rgba(34,32,27,.1);transition:transform .3s ease,box-shadow .3s ease}
+.polaroid:hover{transform:rotate(.6deg) translateY(-4px);box-shadow:8px 11px 0 rgba(34,32,27,.12)}
+.polaroid figcaption{font-family:var(--hand);font-weight:600;font-size:1.3rem;text-align:center;margin-top:12px;color:var(--ink-soft)}
+.portrait{aspect-ratio:320/330;background:#FFFEFA;border:1px solid rgba(34,32,27,.12)}
+.whybub{position:absolute;top:-38px;right:-16px;width:96px;transform:rotate(7deg)}
+.whybub path,.whybub circle{stroke:var(--blue);stroke-width:2.6;fill:#FFFDF6}
+.whybub text{font-family:var(--hand);font-weight:700;font-size:26px;fill:var(--blue)}
+.hero-made{margin-top:26px;text-align:center;font-size:1.2rem;color:var(--ink-soft)}
+.hero__scroll{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;text-decoration:none;font-size:.6rem;letter-spacing:.28em;
+  color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero__scroll .ic{width:.8em;height:1.2em;color:var(--red);animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media(max-width:900px){
+  .hero{padding-top:130px}
+  .hero__grid{grid-template-columns:1fr;gap:56px}
+  .hero__side{max-width:330px;margin-inline:auto}
+  .hero-stickies{position:static;display:flex;flex-wrap:wrap;gap:14px;padding:10px 0 4px}
+  .hero-stickies .sticky{position:static}
+  .hero-look{position:static;margin-bottom:4px}
+  .look-arr{display:none}
+  .hero__namezone{padding:6px 0 8px;display:block}
+  .hero__scroll{display:none}
+}
+
+/* ============ 5. ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:clamp(36px,6vw,80px)}
+.about-copy .lead{font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:600;line-height:1.4;max-width:30ch}
+.about-copy p{margin-bottom:22px;max-width:58ch}
+.about-copy .qs{list-style:none;margin:6px 0 26px}
+.about-copy .qs li{margin-bottom:14px;font-weight:600;font-size:clamp(1.05rem,2vw,1.25rem)}
+.about-rail{display:flex;flex-direction:column;gap:38px;padding-top:14px}
+.rail-arrow{width:70px;height:60px;margin-left:24px}
+.rail-arrow path{stroke:var(--red);stroke-width:2.4;fill:none;stroke-linecap:round}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .about-rail{flex-direction:row;flex-wrap:wrap;gap:14px 30px;padding:18px 0 0;border-top:1.5px dashed rgba(34,32,27,.18)}
+  .rail-arrow{display:none}
+}
+
+/* ============ 6. CAREER STORY ============ */
+.story-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(36px,6vw,72px);align-items:start}
+.timeline{list-style:none;position:relative}
+.timeline::before{content:'';position:absolute;left:9px;top:14px;bottom:14px;width:0;
+  border-left:2px dashed rgba(34,32,27,.35)}
+.timeline li{position:relative;padding:0 0 34px 48px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:'';position:absolute;left:1px;top:7px;width:18px;height:18px;background:var(--c,var(--ink));
+  border:1.8px solid var(--ink);border-radius:47% 53% 55% 45% / 55% 45% 52% 48%}
+.t-year{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft)}
+.t-co{font-family:var(--disp);font-weight:400;font-size:clamp(1.35rem,2.6vw,1.8rem);text-transform:uppercase;margin:4px 0 2px}
+.t-role{font-family:var(--hand);font-weight:700;font-size:1.3rem;color:var(--blue);display:block}
+.t-now{border:1.8px dashed var(--blue);background:rgba(43,73,199,.06);padding:18px 18px 16px 48px !important;border-radius:8px}
+.t-note{display:block;font-family:var(--hand);font-size:1.1rem;color:var(--red);margin-top:4px}
+.ladder{border:1.8px solid var(--ink);background:var(--card);border-radius:var(--wob1);padding:28px 26px 24px;transform:rotate(.8deg);
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ladder__t{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;color:var(--ink-soft);margin-bottom:6px}
+.ladder span.w{font-weight:700;font-size:.82rem;letter-spacing:.08em;padding:.55em 1em;border:1.6px solid rgba(34,32,27,.4);
+  border-radius:var(--wob2);background:var(--paper2);color:var(--ink-soft)}
+.ladder span.w.long{max-width:200px;text-align:center;line-height:1.35}
+.ladder .lk-pink{border-color:var(--pink);color:var(--pink)}
+.ladder .lk-green{border-color:var(--green);color:var(--green)}
+.ladder .lk-amber{border-color:var(--amber);color:var(--amber)}
+.ladder .lk-blue{background:var(--blue);color:var(--paper);border-color:var(--blue)}
+.ladder .larr{width:14px;height:22px;align-self:center;color:var(--ink-soft)}
+.ladder__note{margin-top:14px;font-family:var(--hand);font-weight:600;font-size:1.25rem;color:var(--red)}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+
+/* ============ 7. WHAT I BRING ============ */
+.bring-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,46px)}
+.bring-card{background:var(--card);border:1.7px solid var(--ink);border-radius:8px 4px 10px 5px;padding:clamp(24px,3vw,36px);position:relative;
+  box-shadow:4px 5px 0 rgba(34,32,27,.08)}
+.bring-grid .b2{margin-top:30px}
+.bring-grid .b4{margin-top:30px}
+.bring-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.bring-idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--acc)}
+.bring-sym{width:64px;height:64px}
+.bring-exh{font-family:var(--hand);font-size:1rem;color:var(--ink-soft);text-align:right;margin-top:2px}
+.bring-card h3{font-family:var(--disp);font-weight:400;font-size:1.55rem;text-transform:uppercase;letter-spacing:.01em}
+.bring-rule{width:64px;height:8px;margin:10px 0 14px}
+.bring-rule path{stroke:var(--acc);stroke-width:3;fill:none;stroke-linecap:round}
+.bring-card p{color:var(--ink-soft);font-size:.98rem}
+.bw:hover .tilt{transform:rotate(0deg) translateY(-6px);box-shadow:7px 9px 0 rgba(34,32,27,.12)}
+.bw .tilt{box-shadow:4px 5px 0 rgba(34,32,27,.08)}
+@media(max-width:760px){.bring-grid{grid-template-columns:1fr}.bring-grid .b2,.bring-grid .b4{margin-top:0}}
+
+/* ============ 8. SELECTED WORK ============ */
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:56px 20px}
+.pw{grid-column:1/8}
+.pw:nth-child(2){grid-column:6/13}
+.pw:nth-child(3){grid-column:2/9}
+.pw:nth-child(4){grid-column:5/13}
+.pcard{position:relative;background:var(--card);border:1.7px solid var(--ink);border-radius:6px 10px 5px 9px;
+  padding:34px 34px 30px;box-shadow:5px 6px 0 rgba(34,32,27,.09)}
+.pcard__num{position:absolute;top:-12px;right:16px;font-family:var(--disp);font-size:6.4rem;line-height:1;color:var(--acc);opacity:.15;pointer-events:none}
+.pcard__note{position:absolute;top:104px;right:26px;max-width:190px;text-align:right;font-family:var(--hand);font-weight:600;
+  font-size:1.2rem;line-height:1.2;color:var(--ink-soft);transform:rotate(-2deg)}
+.pcard__cat{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:var(--acc);border-bottom:2px solid var(--accbg);padding-bottom:8px;display:inline-block}
+.pcard h3{font-family:var(--disp);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.5rem);text-transform:uppercase;line-height:1;margin:16px 0 14px;max-width:14ch}
+.pcard__desc{color:var(--ink-soft);max-width:44ch;font-size:.98rem}
+.pcard__metrics{display:flex;gap:clamp(18px,3vw,38px);flex-wrap:wrap;margin:24px 0 26px}
+.pm__num{font-family:var(--disp);font-size:2.5rem;line-height:1;color:var(--acc)}
+.pm{display:flex;flex-direction:column;gap:5px}
+.pm__row{display:flex;align-items:baseline;gap:8px}
+.pm__row .ic{width:.85em;height:1.15em;color:var(--acc)}
+.pm__lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase}
+.pcard__cta{display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+  text-decoration:none;color:var(--ink);padding:10px 0 12px;background-position:0 100%;background-repeat:repeat-x;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='6' viewBox='0 0 28 6'><path d='M1 4 C 7 1, 14 5, 27 2' fill='none' stroke='%232B49C7' stroke-width='1.6'/></svg>");
+  transition:color .2s}
+.pcard__cta .ic{transition:transform .25s}
+.pcard__cta:hover{color:var(--blue)}
+.pcard__cta:hover .ic{transform:translateX(5px)}
+.pw:hover .tilt{transform:rotate(0deg) translateY(-7px);box-shadow:9px 12px 0 rgba(34,32,27,.12)}
+/* treatment variants */
+.pc-t2 .pcard{box-shadow:inset 7px 0 0 0 var(--acc),5px 6px 0 rgba(34,32,27,.09)}
+.pc-t2 .tab{position:absolute;top:-21px;left:26px;background:var(--card);border:1.7px solid var(--ink);border-bottom:none;
+  border-radius:6px 6px 0 0;padding:3px 14px;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;color:var(--acc)}
+.pc-t3 .pcard{background:var(--ink);border:none;padding:1.8px;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%);
+  box-shadow:5px 6px 0 rgba(34,32,27,.12)}
+.pc-t3 .pcard__in{background:var(--card);clip-path:polygon(0 0,calc(100% - 28.6px) 0,100% 28.6px,100% 100%,0 100%);
+  padding:34px 34px 30px;position:relative}
+.pc-t3 .hole{position:absolute;left:16px;width:15px;height:15px;border-radius:50%;background:var(--paper);
+  box-shadow:inset 0 2px 3px rgba(0,0,0,.22);border:1px solid rgba(34,32,27,.25)}
+.pc-t3 .hole--a{top:70px}.pc-t3 .hole--b{top:100px}
+.pc-t4 .pcard__in{background-image:
+  linear-gradient(90deg,transparent 0 56px,rgba(199,75,46,.35) 56px 57.5px,transparent 57.5px),
+  repeating-linear-gradient(to bottom,transparent 0 31px,rgba(34,32,27,.07) 31px 32px)}
+@media(min-width:761px){.pc-t4 .pcard__in{padding-left:80px}}
+@media(max-width:1000px){.pw,.pw:nth-child(2),.pw:nth-child(3),.pw:nth-child(4){grid-column:1/-1}}
+@media(max-width:860px){.pcard__note{position:static;text-align:left;max-width:none;margin:0 0 10px;display:block}}
+
+/* ============ 9. IMPACT NUMBERS ============ */
+.pins{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:flex-start}
+.pin{width:min(250px,100%);background:var(--card);border:1.7px solid var(--ink);border-radius:var(--wob2);
+  padding:34px 22px 26px;text-align:center;position:relative;box-shadow:4px 5px 0 rgba(34,32,27,.08)}
+.pins > div:nth-child(2){margin-top:34px}
+.pins > div:nth-child(3){margin-top:12px}
+.pins > div:nth-child(4){margin-top:40px}
+.pin__num{font-family:var(--disp);font-size:4.4rem;line-height:1;color:var(--acc);display:flex;justify-content:center;align-items:baseline;gap:8px}
+.pin__num .ic{width:.55em;height:.85em;color:var(--acc)}
+.pin__cap{display:block;margin-top:12px;font-family:var(--hand);font-weight:600;font-size:1.35rem;line-height:1.2;color:var(--ink)}
+.pin:hover .tilt{transform:rotate(0deg) translateY(-5px);box-shadow:7px 9px 0 rgba(34,32,27,.12)}
+.impact-note{margin-top:46px;text-align:center;font-size:1.35rem;color:var(--red)}
+@media(max-width:640px){.pins{flex-direction:column;align-items:center}.pins > div{margin-top:0 !important}}
+
+/* ============ 10. HOW I THINK ============ */
+.steps{list-style:none;display:flex;flex-direction:column;gap:34px;margin-bottom:64px}
+.step{display:grid;grid-template-columns:104px 1fr;gap:22px;max-width:640px;align-items:start}
+.step:nth-child(2){margin-left:8%}
+.step:nth-child(3){margin-left:16%}
+.step:nth-child(4){margin-left:24%}
+.step__num{font-family:var(--disp);font-size:3.3rem;line-height:.9;color:transparent;-webkit-text-stroke:1.6px var(--ink)}
+@supports not (-webkit-text-stroke:1px black){.step__num{color:rgba(34,32,27,.25)}}
+.step h3{font-family:var(--disp);font-weight:400;font-size:1.35rem;text-transform:uppercase}
+.step p{color:var(--ink-soft);font-size:.98rem;margin-top:6px;max-width:44ch}
+.step .anno{display:block;margin-top:8px;color:var(--acc,var(--ink-soft));font-size:1.15rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:12px 8px}
+.fn{font-weight:700;font-size:.8rem;letter-spacing:.1em;padding:.75em 1.15em;border:1.8px solid var(--ink);
+  border-radius:var(--wob2);background:var(--card)}
+.fn-pink{border-color:var(--pink);color:var(--pink)}
+.fn-green{border-color:var(--green);color:var(--green)}
+.fn-amber{border-color:var(--amber);color:var(--amber);background:rgba(233,185,59,.22)}
+.fn-blue{border-color:var(--blue);color:var(--blue)}
+.fn-ink{background:var(--ink);color:var(--paper)}
+.farr{width:30px;height:16px;color:var(--ink)}
+.farr path{stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.flow-loop{display:block;width:min(540px,92%);margin:18px auto 0}
+.flow-loop path{stroke:var(--blue);stroke-width:2.6;fill:none;stroke-linecap:round}
+.flow-loop text{font-family:var(--hand);font-weight:700;font-size:23px;fill:var(--blue)}
+.flow-caption{text-align:center;margin-top:20px}
+.flow-mob-note{display:none;text-align:center;font-size:1.3rem;color:var(--blue);margin-top:14px}
+@media(max-width:640px){
+  .step{grid-template-columns:74px 1fr}
+  .step:nth-child(n){margin-left:0}
+  .step__num{font-size:2.4rem}
+  .flow{flex-direction:column;align-items:center}
+  .flow .farr{transform:rotate(90deg)}
+  .flow-loop{display:none}
+  .flow-mob-note{display:block}
+}
+
+/* ============ 11. OPERATIONS LESSONS ============ */
+.lessons{display:flex;flex-wrap:wrap;gap:30px}
+.lesson{width:min(320px,100%);background:var(--card);border:1.7px solid var(--ink);border-radius:var(--wob1);
+  padding:34px 26px 28px;position:relative;box-shadow:4px 5px 0 rgba(34,32,27,.08)}
+.lesson::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(3deg);
+  width:15px;height:15px;border-radius:50%;background:var(--pinC,var(--red));box-shadow:0 3px 4px rgba(34,32,27,.3),inset -2px -2px 3px rgba(0,0,0,.25)}
+.lesson p{font-family:var(--hand);font-weight:600;font-size:1.45rem;line-height:1.3}
+.lesson:hover .tilt{transform:rotate(0deg) translateY(-5px);box-shadow:7px 9px 0 rgba(34,32,27,.12)}
+.lessons > div:nth-child(2){margin-top:22px}.lessons > div:nth-child(3){margin-top:44px}
+.lessons > div:nth-child(4){margin-top:14px}.lessons > div:nth-child(5){margin-top:34px}
+@media(max-width:700px){.lessons{flex-direction:column;align-items:center}.lessons > div{margin-top:0 !important;width:100%}}
+
+/* ============ 12. PLAYGROUND (styles kept for when the section returns) ============ */
+.pg-list{border-top:1.5px dashed rgba(34,32,27,.18)}
+.pg-row{display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:center;padding:26px 12px;
+  border-bottom:1.5px dashed rgba(34,32,27,.18);transition:background .25s,transform .25s}
+.pg-row:hover{background:rgba(255,253,246,.8);transform:translateX(6px)}
+.pg-idx{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-soft)}
+.pg-row h3{font-size:1.15rem;font-weight:700}
+.pg-row .pg-sub{font-family:var(--hand);font-weight:600;font-size:1.25rem;color:var(--acc);margin-top:2px}
+.stamp{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;color:var(--red);border:2px solid var(--red);
+  border-radius:6px 3px 8px 3px;padding:.55em 1em;transform:rotate(-5deg);opacity:.85;white-space:nowrap}
+.pg-next{margin-top:36px;border:2px dashed rgba(34,32,27,.35);border-radius:10px;padding:30px 24px;text-align:center}
+.pg-next .hand{font-size:1.4rem}
+.pg-next .mono{display:block;margin-top:8px;font-size:.6rem;letter-spacing:.26em;color:var(--ink-soft)}
+.pg-promise{font-size:1.2rem;color:var(--ink-soft);margin-top:10px}
+@media(max-width:640px){.pg-row{grid-template-columns:1fr;gap:8px}.stamp{justify-self:start}}
+
+/* ============ 13. CURRENTLY EXPLORING ============ */
+.explore{max-width:780px;background:var(--card);border:1.7px solid var(--ink);border-radius:10px 5px 12px 6px;
+  padding:clamp(28px,5vw,52px);position:relative;transform:rotate(-.6deg);box-shadow:6px 7px 0 rgba(34,32,27,.09)}
+.explore__k{font-family:var(--hand);font-weight:700;font-size:1.5rem;color:var(--green)}
+.explore h3{font-family:var(--disp);font-weight:400;font-size:clamp(2.2rem,5vw,3.2rem);text-transform:uppercase;margin:6px 0 16px}
+.explore p{color:var(--ink-soft);max-width:56ch}
+.explore__chip{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--blue);color:var(--paper);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;padding:.85em 1.2em;border-radius:var(--wob2);transform:rotate(-1deg)}
+.explore__still{margin-top:16px;font-size:1.15rem;color:var(--red)}
+.explore__spark{position:absolute;top:-16px;right:36px;width:30px;height:30px;color:var(--amber)}
+.explore__spark svg{width:100%;height:100%}
+
+/* ============ 14. TOOLKIT ============ */
+.tk-intro{font-size:1.4rem;color:var(--ink-soft);margin-bottom:30px}
+.tk-group{margin-bottom:30px}
+.tk-group__h{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;color:var(--ink-soft);margin-bottom:14px}
+.tk-group__h i{width:11px;height:11px;border-radius:3px;background:var(--dot);transform:rotate(4deg)}
+.tk-chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{font-family:var(--hand);font-weight:600;font-size:1.2rem;background:var(--card);border:1.6px solid var(--ink);
+  border-radius:var(--wob2);padding:.3em .9em;transform:rotate(var(--r,0deg));transition:transform .25s}
+.chip:hover{transform:rotate(0deg) translateY(-3px)}
+.tk-note{font-size:1.2rem;color:var(--ink-soft)}
+.tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 44px}
+@media(max-width:760px){.tk-grid{grid-template-columns:1fr}}
+
+/* ============ 15. EXPERIENCE ============ */
+.xp-evo{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;margin-bottom:40px}
+.xp-evo span.w{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;border:1.5px solid rgba(34,32,27,.4);
+  border-radius:20px;padding:.5em .95em;background:var(--card);color:var(--ink-soft)}
+.xp-evo span.w.on{border-color:var(--blue);color:var(--blue);background:rgba(43,73,199,.07)}
+.xp-evo .farr{width:24px;height:13px}
+.xp-row{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:30px 0;border-bottom:1.5px dashed rgba(34,32,27,.18);position:relative}
+.xp-row:first-of-type{border-top:1.5px dashed rgba(34,32,27,.18)}
+.xp-dates{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--ink-soft);padding-top:6px}
+.xp-row h3{font-family:var(--disp);font-weight:400;font-size:1.45rem;text-transform:uppercase}
+.xp-role{display:block;font-weight:700;color:var(--blue);font-size:.95rem;margin:4px 0 10px}
+.xp-sum{color:var(--ink-soft);max-width:58ch;font-size:.98rem}
+.xp-note{font-family:var(--hand);font-weight:600;font-size:1.2rem;color:var(--red);margin-top:10px;display:block}
+@media(max-width:700px){.xp-row{grid-template-columns:1fr;gap:6px}}
+
+/* ============ 16. CREDENTIALS ============ */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.cred{background:rgba(255,253,246,.7);border:1.6px solid rgba(34,32,27,.5);border-radius:8px;padding:26px 26px 22px}
+.cred__k{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;color:var(--ink-soft);margin-bottom:12px}
+.cred h3{font-size:1.1rem;font-weight:700;line-height:1.35}
+.cred p{color:var(--ink-soft);font-size:.9rem;margin-top:6px}
+.cred .hand{display:block;margin-top:10px;font-size:1.1rem;color:var(--green)}
+@media(max-width:700px){.cred-grid{grid-template-columns:1fr}}
+
+/* ============ 17. PROUD (receipts) ============ */
+.proud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.receipt{background:var(--card);border:1.6px solid var(--ink);border-radius:4px;padding:22px 22px 20px;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 27px,rgba(34,32,27,.06) 27px 28px);
+  box-shadow:3px 4px 0 rgba(34,32,27,.08)}
+.receipt__k{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;color:var(--ink-soft)}
+.receipt__k svg{width:15px;height:15px;color:var(--amber)}
+.receipt__num{font-family:var(--disp);font-size:3rem;line-height:1;color:var(--acc);margin:14px 0 10px;display:block}
+.receipt p{font-size:.88rem;color:var(--ink);line-height:1.45}
+.proud-note{margin-top:34px;font-size:1.3rem;color:var(--red)}
+
+/* ============ 18. CONTACT ============ */
+.contact{overflow:hidden}
+.contact__k{font-family:var(--hand);font-weight:700;font-size:1.6rem;color:var(--pink)}
+.contact h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.5rem,7vw,5rem);line-height:.98;text-transform:uppercase;margin:8px 0 4px}
+.contact__talk{font-family:var(--hand);font-weight:700;font-size:clamp(3rem,8vw,5.4rem);color:var(--blue);line-height:1}
+.contact__sub{font-family:var(--hand);font-weight:600;font-size:1.5rem;color:var(--ink-soft);margin-top:16px}
+.c-links{margin-top:40px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.c-link{display:inline-flex;align-items:baseline;gap:14px;text-decoration:none;padding:4px 0}
+.c-link svg{width:20px;height:15px;align-self:center;color:var(--ink-soft)}
+.c-link .mono{font-size:.62rem;letter-spacing:.22em;color:var(--ink-soft)}
+.c-link .c-val{font-weight:600;border-bottom:2px solid rgba(34,32,27,.25);transition:border-color .2s,color .2s}
+.c-link:hover .c-val{color:var(--blue);border-color:var(--blue)}
+.contact__cta{position:relative;display:inline-block;margin-top:38px}
+.contact__doodle{position:absolute;top:-34px;right:-190px;width:180px;text-align:right;color:var(--red)}
+.contact__doodle .hand{display:block;font-size:1.25rem;transform:rotate(-3deg)}
+.contact__doodle svg{width:130px;height:56px;margin-left:auto}
+.contact__doodle path{stroke:var(--red);stroke-width:2.4;fill:none;stroke-linecap:round}
+.contact__fast{margin-top:26px;font-size:1.25rem;color:var(--ink-soft)}
+@media(max-width:860px){.contact__doodle{display:none}}
+
+/* ============ 19. FOOTER ============ */
+.footer{background:var(--ink);color:var(--paper);margin-top:90px;position:relative;padding:64px 0 36px}
+.footer::before{content:'';position:absolute;top:-15px;left:0;right:0;height:16px;
+  background:linear-gradient(-45deg,transparent 15px,var(--ink) 0),linear-gradient(45deg,transparent 15px,var(--ink) 0);
+  background-repeat:repeat-x;background-position:left bottom;background-size:30px 30px}
+.footer__grid{display:flex;flex-wrap:wrap;gap:34px 60px;justify-content:space-between;align-items:flex-start}
+.footer__name{font-family:var(--disp);font-weight:400;font-size:2rem;letter-spacing:.02em}
+.footer__meta{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;color:rgba(246,240,225,.75);margin-top:8px}
+.footer__links{display:flex;gap:26px}
+.footer__links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--paper);text-decoration:none;
+  border-bottom:1.5px solid rgba(246,240,225,.4);padding-bottom:4px;transition:color .2s,border-color .2s}
+.footer__links a:hover{color:var(--yellow);border-color:var(--yellow)}
+.footer__thanks{font-family:var(--hand);font-weight:600;font-size:1.7rem;color:var(--yellow)}
+.footer__bottom{margin-top:44px;padding-top:22px;border-top:1px dashed rgba(246,240,225,.25);display:flex;flex-wrap:wrap;gap:14px 30px;
+  justify-content:space-between;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:rgba(246,240,225,.6)}
+.footer__top{color:var(--paper);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.footer__top .ic{transform:rotate(-90deg);width:1em;height:.6em}
+.footer__top:hover{color:var(--yellow)}
+
+/* ============ 20. CASE STUDY VIEW ============ */
+.case-view{position:fixed;inset:0;z-index:200;overflow-y:auto;overscroll-behavior:contain;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 35px,var(--ink-faint) 35px,var(--ink-faint) 36px)}
+.case-view::before{content:'';position:fixed;top:0;bottom:0;left:88px;width:1.5px;background:rgba(199,75,46,.3);z-index:-1}
+@media(max-width:640px){.case-view::before{left:22px}}
+body.locked{overflow:hidden}
+.cv-bar{position:sticky;top:0;z-index:5;background:var(--paper2);border-bottom:1.6px solid var(--ink);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px clamp(16px,4vw,28px)}
+.cv-back,.cv-close{display:inline-flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;color:var(--ink);padding:8px 4px}
+.cv-back .ic{transform:scaleX(-1)}
+.cv-close{border:1.6px solid var(--ink);border-radius:3px;padding:8px 12px;background:var(--card)}
+.cv-close svg{width:14px;height:14px}
+.cv-close:hover,.cv-back:hover{color:var(--blue)}
+.cv-pos{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--ink-soft)}
+.case-body{max-width:800px;margin-inline:auto;padding:64px clamp(20px,5vw,48px) 90px}
+.cs-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;color:var(--acc)}
+.cs-title{font-family:var(--disp);font-weight:400;font-size:clamp(2.1rem,6vw,3.6rem);text-transform:uppercase;line-height:1;margin:14px 0 12px}
+.cs-cat{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;color:var(--ink-soft)}
+.cs-hero{margin:38px 0 8px;padding:26px 0 30px;border-top:1.5px dashed rgba(34,32,27,.25);border-bottom:1.5px dashed rgba(34,32,27,.25);
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.cs-hero .n{font-family:var(--disp);font-size:4.6rem;line-height:1;color:var(--acc)}
+.cs-hero .n .ic{width:.5em;height:.8em;color:var(--acc)}
+.cs-hero .l{font-family:var(--hand);font-weight:600;font-size:1.5rem;color:var(--ink-soft);max-width:20ch;line-height:1.15}
+.cs-sec{margin-top:46px}
+.cs-sec h3{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;color:var(--ink-soft);margin-bottom:16px}
+.cs-sec p{margin-bottom:16px;max-width:62ch;color:var(--ink);font-size:1rem}
+.cs-sec p:last-child{margin-bottom:0}
+.diagram{margin:28px 0 10px}
+.diag{width:100%;height:auto}
+.fig{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline}
+.fig span{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;color:var(--ink-soft)}
+.fig em{font-family:var(--hand);font-weight:600;font-size:1.1rem;color:var(--red);font-style:normal}
+.cs-outcome{margin-top:46px;padding:34px 0;border-top:1.5px dashed rgba(34,32,27,.25);
+  display:flex;gap:clamp(26px,6vw,70px);flex-wrap:wrap}
+.cs-outcome .n{font-family:var(--disp);font-size:3.6rem;line-height:1;color:var(--acc)}
+.cs-outcome .n .ic{width:.5em;height:.8em;color:var(--acc)}
+.cs-outcome .l{display:block;font-family:var(--hand);font-weight:600;font-size:1.3rem;color:var(--ink);margin-top:8px;max-width:18ch;line-height:1.2}
+.cs-learned{margin-top:46px;background:rgba(233,185,59,.3);border:1.7px solid var(--ink);border-radius:var(--wob2);
+  padding:30px 30px 26px;transform:rotate(-.5deg)}
+.cs-learned__k{font-family:var(--hand);font-weight:700;font-size:1.3rem;color:var(--red);display:block;margin-bottom:8px}
+.cs-learned p{font-family:var(--hand);font-weight:600;font-size:1.5rem;line-height:1.35}
+.cs-next{margin-top:56px;padding-top:30px;border-top:1.5px dashed rgba(34,32,27,.25);display:flex;flex-direction:column;gap:8px}
+.cs-next__k{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;color:var(--ink-soft)}
+.cs-next a{font-family:var(--disp);font-size:1.7rem;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:14px;transition:color .2s}
+.cs-next a .ic{width:1em;height:.6em;transition:transform .25s}
+.cs-next a:hover{color:var(--blue)}
+.cs-next a:hover .ic{transform:translateX(6px)}
+.cs-backall{margin-top:26px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;color:var(--ink-soft)}
+
+/* ============ 21. MOTION & A11Y ============ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1 !important;transform:none !important}
+  .animsvg path[pathLength]{stroke-dashoffset:0 !important;transition:none !important}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<!-- shared SVG defs: sketchy filters + hand-drawn icon symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+    </filter>
+    <filter id="rough2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+    </filter>
+    <symbol id="i-arr" viewBox="0 0 24 14"><path d="M1 7 C 7 5 15 9 21 7 M16 2 l6 5 -6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-dn" viewBox="0 0 14 24"><path d="M7 1 C 5 7 9 15 7 21 M2 16 l5 6 5 -6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 14 24"><path d="M7 23 C 5 17 9 9 7 3 M2 8 l5 -6 5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 16 16"><path d="M2 2 C 6 6 10 10 14 14 M14 2 C 10 6 6 10 2 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 20 14"><path d="M1 2 C 6 1 14 3 19 2 M1 7 C 6 6 14 8 19 7 M1 12 C 6 11 14 13 19 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 22 16"><path d="M1 2 C 7 6 15 6 21 2 M1 2 L1 14 C 7 11 15 11 21 14 L21 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-in" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5.2" cy="5.4" r="1" fill="currentColor"/><path d="M4.4 8 V12.6 M7 12.6 V8 M7 9.6 C 8 8.4 10.4 8.7 10.4 10.6 V12.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2 L14.5 9 L22 9.5 L16 14 L18 21.5 L12 17.5 L6 21.5 L8 14 L2 9.5 L9.5 9 Z" fill="currentColor" stroke="#22201B" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="binder-holes" aria-hidden="true"><span></span><span></span><span></span></div>
+<a class="skip" href="#main">skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <span class="nav__tape nav__tape--l" aria-hidden="true"></span>
+  <span class="nav__tape nav__tape--r" aria-hidden="true"></span>
+  <nav aria-label="Primary">
+    <a class="nav__logo" href="#home" aria-label="Malavika, home">
+      <span class="nav__m" aria-hidden="true">M</span>
+      <span class="nav__word" aria-hidden="true">MALAVIKA</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#home" data-sec="home">HOME</a></li>
+      <li><a href="#work" data-sec="work">WORK</a></li>
+      <li><a href="#about" data-sec="about">ABOUT</a></li>
+      <li><a href="#thinking" data-sec="thinking">THINKING</a></li>
+      <!-- PLAYGROUND nav link (section currently hidden): remove the comment markers around the next line to re-enable
+      <li><a href="#playground" data-sec="playground">PLAYGROUND</a></li>
+      -->
+    </ul>
+  </nav>
+  <a class="btn nav__cta" href="#contact">CONTACT <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+    <svg aria-hidden="true"><use href="#i-menu"/></svg>
+  </button>
+</header>
+
+<!-- mobile menu -->
+<div class="menu" id="menu">
+  <nav class="menu__nav" aria-label="Mobile">
+    <a href="#home">HOME <span class="hand">start here</span></a>
+    <a href="#work">WORK <span class="hand">the case files</span></a>
+    <a href="#about">ABOUT <span class="hand">the short version</span></a>
+    <a href="#thinking">THINKING <span class="hand">how my brain works</span></a>
+    <!-- PLAYGROUND mobile link (section currently hidden): remove the comment markers around the next line to re-enable
+    <a href="#playground">PLAYGROUND <span class="hand">wip</span></a>
+    -->
+    <a class="menu__cta" href="#contact">CONTACT →</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="hero-hello hand reveal">hello, i'm</p>
+        <div class="hero__namezone">
+          <p class="hero-look hand" aria-hidden="true">look closer
+            <svg class="look-arr animsvg" viewBox="0 0 90 40" aria-hidden="true">
+              <path pathLength="1" d="M6 4 C 34 8, 62 12, 80 32"/>
+              <path d="M80 32 L66 28 M80 32 L74 18"/>
+            </svg>
+          </p>
+          <h1 class="hero-name" aria-label="Malavika"><span aria-hidden="true">M</span><span aria-hidden="true">A</span><span aria-hidden="true">L</span><span aria-hidden="true">A</span><span aria-hidden="true">V</span><span aria-hidden="true">I</span><span aria-hidden="true">K</span><span aria-hidden="true">A</span></h1>
+          <svg class="squiggle" viewBox="0 0 320 22" aria-hidden="true"><path pathLength="1" d="M6 12 C 60 3, 120 20, 180 10 S 290 6, 314 12"/></svg>
+          <div class="hero-stickies" aria-hidden="true">
+            <div class="sticky sticky--y hs-1" style="--r:3deg">PRODUCT<span class="sticky__tip">the mindset</span></div>
+            <div class="sticky sticky--b hs-2" style="--r:-4deg">OPERATIONS<span class="sticky__tip">where I learned</span></div>
+            <div class="sticky sticky--p hs-3" style="--r:-6deg">DATA<span class="sticky__tip">how I check</span></div>
+            <div class="sticky sticky--g hs-4" style="--r:5deg">WORKFLOWS<span class="sticky__tip">where it hurts</span></div>
+          </div>
+        </div>
+        <p class="hero-line reveal" style="--d:.1s">I like solving the <span class="hl hl-y">messy</span> problems behind the screen.</p>
+        <p class="hero-sub reveal" style="--d:.16s">Product-minded professional with 3+ years in healthcare operations, process improvement and data-driven problem solving, now carrying that instinct into product management.</p>
+        <p class="hero-meta mono reveal" style="--d:.22s">ASSOCIATE PRODUCT MANAGER<span class="dot" aria-hidden="true">·</span>CHENNAI, INDIA<span class="dot" aria-hidden="true">·</span>PRODUCT × DATA × WORKFLOWS</p>
+        <p class="hero-star hand reveal" style="--d:.26s" aria-hidden="true">* small details matter</p>
+        <div class="hero-cta reveal" style="--d:.3s">
+          <a class="btn btn--ink" href="#work">SEE MY WORK <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+          <a class="btn btn--ghost" href="#contact">LET'S TALK <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero__side">
+        <div class="polaroid-wrap reveal" style="--d:.2s" id="polaroidWrap">
+          <figure class="polaroid">
+            <span class="tape tape--l" aria-hidden="true"></span>
+            <span class="tape tape--r" aria-hidden="true"></span>
+            <!-- TODO: replace this doodle with a real editorial photo when available (keep the polaroid frame) -->
+            <svg class="portrait" viewBox="0 0 320 330" role="img" aria-label="A hand-drawn doodle portrait placeholder of Malavika">
+              <g filter="url(#rough2)">
+                <path d="M38 330 C 48 262 108 244 160 244 C 212 244 272 262 282 330 Z" fill="#E9B93B" stroke="#22201B" stroke-width="3"/>
+                <ellipse cx="160" cy="168" rx="80" ry="92" fill="#F7E3CC" stroke="#22201B" stroke-width="3.5"/>
+                <path d="M80 150 C 68 40 252 40 240 150 C 242 112 204 90 160 90 C 116 90 78 112 80 150 Z" fill="#22201B"/>
+                <circle cx="160" cy="52" r="27" fill="#22201B"/>
+                <path d="M80 172 C 70 168 68 182 80 186" fill="none" stroke="#22201B" stroke-width="3"/>
+                <path d="M240 172 C 250 168 252 182 240 186" fill="none" stroke="#22201B" stroke-width="3"/>
+              </g>
+              <circle cx="76" cy="196" r="5" fill="#2B49C7"/>
+              <circle cx="244" cy="196" r="5" fill="#2B49C7"/>
+              <g filter="url(#rough)" fill="none" stroke="#22201B" stroke-width="3">
+                <circle cx="128" cy="170" r="25"/><circle cx="192" cy="170" r="25"/>
+                <path d="M153 170 C 158 162 162 162 167 170"/>
+                <path d="M103 166 L 88 160 M217 166 L 232 160"/>
+              </g>
+              <circle cx="128" cy="172" r="4" fill="#22201B"/><circle cx="192" cy="172" r="4" fill="#22201B"/>
+              <path d="M112 138 C 120 132 136 132 144 138 M176 138 C 184 132 200 132 208 138" fill="none" stroke="#22201B" stroke-width="3" stroke-linecap="round"/>
+              <path d="M140 224 C 150 234 170 234 180 224" fill="none" stroke="#22201B" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="104" cy="204" r="10" fill="#D94F72" opacity=".3"/><circle cx="216" cy="204" r="10" fill="#D94F72" opacity=".3"/>
+              <path d="M120 268 C 140 282 180 282 200 268 M132 292 C 148 302 172 302 188 292" fill="none" stroke="#22201B" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+              <path d="M268 92 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 Z" fill="#C74B2E" stroke="#C74B2E" stroke-width="1" stroke-linejoin="round"/>
+            </svg>
+            <figcaption>this is me, usually asking why</figcaption>
+            <div class="whybub" aria-hidden="true">
+              <svg viewBox="0 0 96 78">
+                <path filter="url(#rough)" d="M20 48 C8 46 8 32 20 32 C20 18 40 14 46 26 C58 18 76 26 72 40 C84 44 80 56 68 56 L28 56 C18 56 14 52 20 48 Z"/>
+                <circle cx="30" cy="68" r="4" filter="url(#rough)"/><circle cx="20" cy="76" r="2.6" filter="url(#rough)"/>
+                <text x="46" y="46" text-anchor="middle">why?</text>
+              </svg>
+            </div>
+          </figure>
+          <p class="hero-made hand" aria-hidden="true">made from real problems →</p>
+        </div>
+      </div>
+    </div>
+    <a class="hero__scroll mono" href="#about">SCROLL<svg class="ic ic--dn" aria-hidden="true"><use href="#i-dn"/></svg></a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">01 · INTRO</p>
+        <h2 class="hand-title">what's up?</h2>
+      </header>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="lead reveal">I'm Malavika, a healthcare operations professional who slowly became obsessed with the products behind the processes.</p>
+          <p class="reveal" style="--d:.08s">I've spent 3+ years inside high-volume healthcare workflows, where one small process problem can quietly turn into hundreds of unresolved claims.</p>
+          <p class="reveal" style="--d:.14s">Over time, I stopped looking only at the problem in front of me and started asking bigger, more annoying questions:</p>
+          <ul class="qs">
+            <li class="reveal" style="--d:.18s"><span class="hl hl-y">Why is this taking so long?</span></li>
+            <li class="reveal" style="--d:.24s"><span class="hl hl-p">Where are people getting stuck?</span></li>
+            <li class="reveal" style="--d:.3s"><span class="hl hl-b">What information are they missing?</span></li>
+            <li class="reveal" style="--d:.36s"><span class="hl hl-g">Can the workflow itself be better?</span></li>
+          </ul>
+          <p class="reveal" style="--d:.4s">That curiosity pulled me toward data, root-cause analysis and cross-functional collaboration, and eventually toward <strong>product thinking</strong>.</p>
+        </div>
+        <aside class="about-rail" aria-hidden="true">
+          <p class="anno reveal" style="--d:.1s">start with the problem →</p>
+          <p class="anno reveal" style="--d:.2s">follow the friction →</p>
+          <p class="anno reveal" style="--d:.3s"><span class="circled">why?</span>&nbsp;ask why. twice.</p>
+          <svg class="rail-arrow animsvg reveal" style="--d:.35s" viewBox="0 0 70 60">
+            <path pathLength="1" d="M10 8 C 30 14, 48 26, 56 52"/>
+            <path d="M56 52 L44 46 M56 52 L50 38"/>
+          </svg>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAREER STORY ============ -->
+  <section class="sec" id="story">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">02 · THE PATH</p>
+        <h2 class="sec-title">how I got here</h2>
+      </header>
+      <div class="story-grid">
+        <ol class="timeline">
+          <li class="reveal" style="--c:#C13B60">
+            <span class="t-year mono">2021</span>
+            <h3 class="t-co">Jana Small Finance Bank</h3>
+            <span class="t-role">Operations Assistant / Cashier</span>
+          </li>
+          <li class="reveal" style="--d:.08s;--c:#22201B">
+            <span class="t-year mono">2022</span>
+            <h3 class="t-co">Access Healthcare</h3>
+            <span class="t-role">AR Caller</span>
+          </li>
+          <li class="reveal" style="--d:.16s;--c:#2E7A4F">
+            <span class="t-year mono">2023</span>
+            <h3 class="t-co">AGS Health</h3>
+            <span class="t-role">AR Caller</span>
+          </li>
+          <li class="reveal" style="--d:.24s;--c:#9A6A00">
+            <span class="t-year mono">2025</span>
+            <h3 class="t-co">Vee Healthtek</h3>
+            <span class="t-role">Senior Associate</span>
+          </li>
+          <li class="t-now reveal" style="--d:.32s;--c:#2B49C7">
+            <span class="t-year mono">2026</span>
+            <h3 class="t-co">AI-First Product Management</h3>
+            <span class="t-role">Airtribe</span>
+            <span class="t-note hand">← currently here, learning in public</span>
+          </li>
+        </ol>
+        <aside class="ladder reveal" style="--d:.15s" aria-label="The evolution from customers to product thinking">
+          <span class="ladder__t">THE UNDERCURRENT ↓</span>
+          <span class="w lk-pink">CUSTOMERS</span>
+          <svg class="larr ic" aria-hidden="true"><use href="#i-dn"/></svg>
+          <span class="w">OPERATIONS</span>
+          <svg class="larr ic" aria-hidden="true"><use href="#i-dn"/></svg>
+          <span class="w">WORKFLOWS</span>
+          <svg class="larr ic" aria-hidden="true"><use href="#i-dn"/></svg>
+          <span class="w lk-green">DATA</span>
+          <svg class="larr ic" aria-hidden="true"><use href="#i-dn"/></svg>
+          <span class="w long lk-amber">CROSS-FUNCTIONAL PROBLEM SOLVING</span>
+          <svg class="larr ic" aria-hidden="true"><use href="#i-dn"/></svg>
+          <span class="w lk-blue">PRODUCT THINKING</span>
+          <p class="ladder__note">same instinct, bigger problems →</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT I BRING ============ -->
+  <section class="sec" id="bring">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">03 · WHAT I BRING</p>
+        <h2 class="sec-title">things I bring<br/>to the table</h2>
+      </header>
+      <div class="bring-grid">
+        <div class="bw reveal"><div class="tilt bring-card a-blue" style="--r:-1deg">
+          <div class="bring-top">
+            <span class="bring-idx mono">CARD 01</span>
+            <div>
+              <svg class="bring-sym sym" viewBox="0 0 64 64" role="img" aria-label="Magnifying glass doodle">
+                <g filter="url(#rough)" fill="none" stroke="#2B49C7" stroke-width="3.5" stroke-linecap="round">
+                  <circle cx="27" cy="27" r="15"/><path d="M38 38 L53 53"/><path d="M20 24 L26 19"/>
+                </g>
+              </svg>
+              <p class="bring-exh hand">exhibit A</p>
+            </div>
+          </div>
+          <h3>Problem solving</h3>
+          <svg class="bring-rule" viewBox="0 0 64 8" aria-hidden="true"><path d="M2 5 C 16 1, 34 8, 62 3"/></svg>
+          <p>I like getting past the obvious problem and finding what is actually causing it.</p>
+        </div></div>
+        <div class="bw b2 reveal" style="--d:.1s"><div class="tilt bring-card a-amber" style="--r:1.1deg">
+          <div class="bring-top">
+            <span class="bring-idx mono">CARD 02</span>
+            <div>
+              <svg class="bring-sym sym" viewBox="0 0 64 64" role="img" aria-label="Bar chart doodle">
+                <g filter="url(#rough)">
+                  <path d="M12 52 H54 M12 52 V12" fill="none" stroke="#22201B" stroke-width="3" stroke-linecap="round"/>
+                  <rect x="20" y="33" width="8" height="19" fill="#E9B93B" stroke="#22201B" stroke-width="1.6"/>
+                  <rect x="32" y="24" width="8" height="28" fill="#D94F72" stroke="#22201B" stroke-width="1.6"/>
+                  <rect x="44" y="15" width="8" height="37" fill="#2B49C7" stroke="#22201B" stroke-width="1.6"/>
+                </g>
+              </svg>
+              <p class="bring-exh hand">exhibit B</p>
+            </div>
+          </div>
+          <h3>Data</h3>
+          <svg class="bring-rule" viewBox="0 0 64 8" aria-hidden="true"><path d="M2 3 C 18 8, 40 1, 62 5"/></svg>
+          <p>I use operational data to find patterns, prioritise problems and measure whether a change actually helped.</p>
+        </div></div>
+        <div class="bw reveal" style="--d:.05s"><div class="tilt bring-card a-pink" style="--r:.8deg">
+          <div class="bring-top">
+            <span class="bring-idx mono">CARD 03</span>
+            <div>
+              <svg class="bring-sym sym" viewBox="0 0 64 64" role="img" aria-label="Person doodle">
+                <g filter="url(#rough)" fill="none" stroke="#C13B60" stroke-width="3.5" stroke-linecap="round">
+                  <circle cx="32" cy="21" r="11"/>
+                  <path d="M13 56 C 17 38, 47 38, 51 56"/>
+                </g>
+              </svg>
+              <p class="bring-exh hand">exhibit C</p>
+            </div>
+          </div>
+          <h3>User empathy</h3>
+          <svg class="bring-rule" viewBox="0 0 64 8" aria-hidden="true"><path d="M2 4 C 20 8, 42 2, 62 6"/></svg>
+          <p>Working close to real workflows taught me to pay attention to the people dealing with the friction every day.</p>
+        </div></div>
+        <div class="bw b4 reveal" style="--d:.15s"><div class="tilt bring-card a-green" style="--r:-.9deg">
+          <div class="bring-top">
+            <span class="bring-idx mono">CARD 04</span>
+            <div>
+              <svg class="bring-sym sym" viewBox="0 0 64 64" role="img" aria-label="Connected nodes doodle">
+                <g filter="url(#rough)">
+                  <path d="M16 20 L32 32 M48 16 L32 32 M14 46 L32 32 M50 48 L32 32" fill="none" stroke="#2E7A4F" stroke-width="2.4"/>
+                  <circle cx="16" cy="20" r="5.5" fill="#2E7A4F"/><circle cx="48" cy="16" r="5.5" fill="#2E7A4F"/>
+                  <circle cx="14" cy="46" r="5.5" fill="#2E7A4F"/><circle cx="50" cy="48" r="5.5" fill="#2E7A4F"/>
+                  <circle cx="32" cy="32" r="7" fill="#22201B"/>
+                </g>
+              </svg>
+              <p class="bring-exh hand">exhibit D</p>
+            </div>
+          </div>
+          <h3>Cross-functional thinking</h3>
+          <svg class="bring-rule" viewBox="0 0 64 8" aria-hidden="true"><path d="M2 6 C 22 2, 44 7, 62 3"/></svg>
+          <p>I enjoy connecting operations, product, technology and customer teams around the same problem.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">04 · CASE FILES</p>
+        <h2 class="sec-title">selected work</h2>
+        <p class="sec-sub">A few problems I've worked on, from the operational side of the screen.</p>
+      </header>
+      <div class="work-grid" id="workGrid"><!-- project cards rendered from data --></div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT NUMBERS ============ -->
+  <section class="sec sec--grid" id="impact">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">05 · IMPACT</p>
+        <h2 class="sec-title">numbers I don't<br/>want to ignore</h2>
+      </header>
+      <div class="pins" id="impactPins"><!-- rendered from data --></div>
+      <p class="impact-note hand reveal" aria-hidden="true">from live operational work, not case-study math →</p>
+    </div>
+  </section>
+
+  <!-- ============ HOW I THINK ============ -->
+  <section class="sec sec--grid" id="thinking">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">06 · METHOD</p>
+        <h2 class="sec-title">how I think</h2>
+      </header>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">01</span>
+          <div>
+            <h3>Understand</h3>
+            <p>Start with the people experiencing the problem.</p>
+          </div>
+        </li>
+        <li class="step reveal a-blue" style="--d:.08s">
+          <span class="step__num" aria-hidden="true">02</span>
+          <div>
+            <h3>Investigate</h3>
+            <p>Look at the workflow, the data and the root causes.</p>
+            <span class="anno" aria-hidden="true">okay, but why? →</span>
+          </div>
+        </li>
+        <li class="step reveal a-amber" style="--d:.16s">
+          <span class="step__num" aria-hidden="true">03</span>
+          <div>
+            <h3>Prioritise</h3>
+            <p>Separate problems that are merely annoying from problems that actually matter.</p>
+          </div>
+        </li>
+        <li class="step reveal a-green" style="--d:.24s">
+          <span class="step__num" aria-hidden="true">04</span>
+          <div>
+            <h3>Improve</h3>
+            <p>Work with the right teams to make the workflow better, and measure what changed.</p>
+            <span class="anno" aria-hidden="true">then measure it again →</span>
+          </div>
+        </li>
+      </ol>
+      <div class="reveal">
+        <div class="flow" role="img" aria-label="Process flow: problem, observe, investigate, prioritise, improve, measure">
+          <span class="fn">PROBLEM</span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="fn fn-pink">OBSERVE</span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="fn fn-green">INVESTIGATE</span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="fn fn-amber">PRIORITISE</span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="fn fn-blue">IMPROVE</span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="fn fn-ink">MEASURE</span>
+        </div>
+        <svg class="flow-loop animsvg" viewBox="0 0 560 90" aria-hidden="true">
+          <path pathLength="1" d="M545 12 C 545 58, 420 74, 280 74 C 140 74, 22 58, 20 24"/>
+          <path d="M20 24 L32 34 M20 24 L8 33"/>
+          <text x="280" y="58" text-anchor="middle">…and repeat</text>
+        </svg>
+        <p class="flow-mob-note hand" aria-hidden="true">( …and repeat, it's a loop, not a line )</p>
+        <p class="flow-caption anno reveal" aria-hidden="true">the loop, condensed →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPERATIONS LESSONS ============ -->
+  <section class="sec" id="lessons">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">07 · FIELD NOTES</p>
+        <h2 class="hand-title">things operations taught me about products</h2>
+      </header>
+      <div class="lessons">
+        <div class="reveal"><div class="tilt lesson" style="--r:-2deg;--pinC:#C13B60"><p>"The happy path is rarely the real path."</p></div></div>
+        <div class="reveal" style="--d:.08s"><div class="tilt lesson" style="--r:1.6deg;--pinC:#2B49C7"><p>"Small workflow problems become huge problems at scale."</p></div></div>
+        <div class="reveal" style="--d:.16s"><div class="tilt lesson" style="--r:-1deg;--pinC:#9A6A00"><p>"The person using a system knows where it hurts."</p></div></div>
+        <div class="reveal" style="--d:.24s"><div class="tilt lesson" style="--r:2.4deg;--pinC:#2E7A4F"><p>"Data tells you what is happening. People often tell you why."</p></div></div>
+        <div class="reveal" style="--d:.32s"><div class="tilt lesson" style="--r:-1.4deg;--pinC:#C74B2E"><p>"A faster process isn't useful if it creates more problems downstream."</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       PLAYGROUND SECTION (temporarily hidden)
+       To bring it back later:
+       1. Delete the opening comment marker directly below and the
+          closing one after the section, so the section becomes live.
+       2. Re-enable the PLAYGROUND link in the header navigation.
+       3. Re-enable the PLAYGROUND link in the mobile menu.
+       The JavaScript already supports it (the renderer is guarded),
+       so no JS edits are needed. It sits between LESSONS and LEARNING.
+       ==================================================================
+  <section class="sec" id="playground">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">08 · PLAYGROUND</p>
+        <h2 class="hand-title">playground</h2>
+        <p class="sec-sub">Small product thoughts, experiments and things I can't stop noticing.</p>
+        <p class="pg-promise hand reveal" aria-hidden="true">( a promise, not a portfolio: experiments incoming )</p>
+      </header>
+      <div class="pg-list" id="pgList"></div>
+      <div class="pg-next reveal">
+        <p class="hand">next experiment goes here →</p>
+        <span class="mono">WATCH THIS SPACE</span>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ============ CURRENTLY EXPLORING ============ -->
+  <section class="sec" id="exploring">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">08 · LEARNING</p>
+        <h2 class="hand-title">currently exploring</h2>
+      </header>
+      <div class="explore reveal" role="region" aria-label="AI and product learning">
+        <span class="explore__spark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+        <p class="explore__k hand">the current rabbit hole:</p>
+        <h3>AI × PRODUCT</h3>
+        <p>I'm interested in how AI can reduce repetitive operational work, surface patterns from messy data, and help teams make better decisions without adding another complicated layer to the workflow.</p>
+        <p class="explore__chip mono">AI-FIRST PRODUCT MANAGEMENT · AIRTRIBE · 2026</p>
+        <p class="explore__still hand" aria-hidden="true">still learning → ( current learning, not a trophy )</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLKIT ============ -->
+  <section class="sec" id="toolkit">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">09 · TOOLKIT</p>
+        <h2 class="sec-title">my toolkit</h2>
+      </header>
+      <p class="tk-intro hand reveal" aria-hidden="true">tools I use to think and work →</p>
+      <div class="tk-grid" id="tkWrap"><!-- rendered from data --></div>
+      <p class="tk-note hand reveal" aria-hidden="true">not everything needs a dashboard →</p>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">10 · TRACK RECORD</p>
+        <h2 class="sec-title">where I've been</h2>
+      </header>
+      <div class="xp-evo reveal" role="img" aria-label="Evolution: operations, healthcare claims, data and process improvement, cross-functional work, product thinking">
+        <span class="w">OPERATIONS</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="w">HEALTHCARE CLAIMS</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="w">DATA &amp; PROCESS IMPROVEMENT</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="w">CROSS-FUNCTIONAL WORK</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="w on">PRODUCT THINKING</span>
+      </div>
+      <div id="xpList"><!-- rendered from data --></div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION & CERTIFICATION ============ -->
+  <section class="sec" id="credentials">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">11 · CREDENTIALS</p>
+        <h2 class="sec-title" style="font-size:clamp(1.7rem,3.6vw,2.5rem)">education &amp; certification</h2>
+      </header>
+      <div class="cred-grid">
+        <div class="cred reveal">
+          <p class="cred__k">EDUCATION</p>
+          <h3>Bachelor of Commerce in Corporate Secretaryship</h3>
+          <p>Dwaraka Doss Goverdhan Doss Vaishnav College, Chennai · 2017 TO 2020</p>
+        </div>
+        <div class="cred reveal" style="--d:.1s">
+          <p class="cred__k">CERTIFICATION</p>
+          <h3>AI-First Product Management</h3>
+          <p>Airtribe · 2026</p>
+          <span class="hand">evidence of learning, in progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK I'M PROUD OF ============ -->
+  <section class="sec" id="proud">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">12 · PROOF</p>
+        <h2 class="sec-title">work I'm proud of</h2>
+      </header>
+      <div class="proud-grid" id="proudGrid"><!-- rendered from data --></div>
+      <p class="proud-note hand reveal" aria-hidden="true">documented, not decorated →</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <p class="contact__k hand reveal">okay, last page:</p>
+      <h2 class="reveal">have a<br/>messy problem?</h2>
+      <p class="contact__talk reveal" style="--d:.1s">let's talk.</p>
+      <p class="contact__sub reveal" style="--d:.16s">Got a complicated workflow? I probably want to understand it.</p>
+      <div class="c-links reveal" style="--d:.22s">
+        <!-- TODO: replace with Malavika's real email address (also in the footer and the SAY HELLO button below) -->
+        <a class="c-link" href="mailto:hello.malavika@gmail.com">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>
+          <span class="mono">EMAIL</span><span class="c-val">hello.malavika@gmail.com</span>
+        </a>
+        <!-- TODO: replace with Malavika's real LinkedIn URL (also in the footer) -->
+        <a class="c-link" href="https://www.linkedin.com/in/malavika" target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-in"/></svg>
+          <span class="mono">LINKEDIN</span><span class="c-val">/in/malavika</span>
+        </a>
+      </div>
+      <div class="contact__cta reveal" style="--d:.28s">
+        <a class="btn btn--ink btn--big" href="mailto:hello.malavika@gmail.com">SAY HELLO <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+        <div class="contact__doodle" aria-hidden="true">
+          <span class="hand">yes, this one</span>
+          <svg class="animsvg" viewBox="0 0 130 56"><path pathLength="1" d="M124 6 C 92 10, 44 14, 20 46"/><path d="M20 46 L34 42 M20 46 L26 32"/></svg>
+        </div>
+      </div>
+      <p class="contact__fast hand reveal" style="--d:.34s" aria-hidden="true">usually replies fast, old operations habit :)</p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__name">MALAVIKA</p>
+        <p class="footer__meta">PRODUCT × DATA × WORKFLOWS<br/>CHENNAI, INDIA</p>
+      </div>
+      <div class="footer__links">
+        <!-- keep in sync with the contact section links -->
+        <a href="https://www.linkedin.com/in/malavika" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="mailto:hello.malavika@gmail.com">EMAIL</a>
+        <a class="footer__top" href="#home">TOP <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+      </div>
+      <p class="footer__thanks">thanks for scrolling :)</p>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> MALAVIKA · MADE WITH CURIOSITY</span>
+      <span>NO TEMPLATES WERE HARMED IN THE MAKING OF THIS NOTEBOOK</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CASE STUDY OVERLAY ============ -->
+<div class="case-view" id="caseView" hidden role="dialog" aria-modal="true" aria-label="Case study">
+  <div class="cv-bar">
+    <button class="cv-back" id="cvBack"><svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg> BACK TO NOTEBOOK</button>
+    <span class="cv-pos" id="cvPos">CASE 01 / 04</span>
+    <button class="cv-close" id="cvClose" aria-label="Close case study"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="case-body" id="caseBody"></div>
+</div>
+
+<noscript><p style="padding:120px 24px;font-family:monospace;text-align:center">This notebook needs JavaScript for the case-study pages. The main story is above, though.</p></noscript>
+
+<script>
+/* =====================================================================
+   DATA. Add a new object to any array and it renders automatically.
+   ===================================================================== */
+const INK='#22201B', SOFT='rgba(34,32,27,.62)', PAPER='#FFFDF6',
+      BLUE='#2B49C7', GREEN='#2E7A4F', RED='#C74B2E', PINK='#D94F72', YEL='#E9B93B', AMB='#9A6A00';
+
+const PROJECTS=[
+  {id:'c1',num:'01',treat:'t1',acc:'blue',
+   title:'Reducing repeated claim issues',
+   cat:'HEALTHCARE OPERATIONS × PROCESS IMPROVEMENT',
+   desc:'Identifying claim-handling bottlenecks and working with cross-functional teams to improve the workflow.',
+   metrics:[{n:'30%',d:'down',l:'repeated issues'},{n:'20%',d:'up',l:'resolution speed'}],
+   note:'this one started with a bottleneck'},
+  {id:'c2',num:'02',treat:'t2',acc:'amber',
+   title:'Finding the pattern behind claim denials',
+   cat:'DATA × ROOT-CAUSE ANALYSIS',
+   desc:'Using operational data and root-cause analysis to improve denial identification and resolution.',
+   metrics:[{n:'18%',d:'down',l:'claim backlog'},{n:'15%',d:'up',l:'first-pass resolution'}],
+   note:'patterns hiding in plain sight'},
+  {id:'c3',num:'03',treat:'t3',acc:'green',
+   title:'Making workflow tracking clearer',
+   cat:'WORKFLOW × CROSS-FUNCTIONAL COLLABORATION',
+   desc:'Using cross-team feedback to identify workflow inefficiencies and support better tracking.',
+   metrics:[{n:'20%',d:'down',l:'operational friction'}],
+   note:'the fix lived between teams'},
+  {id:'c4',num:'04',treat:'t4',acc:'pink',
+   title:'Understanding the customer before fixing the process',
+   cat:'CUSTOMER EXPERIENCE × OPERATIONS',
+   desc:'Mapping customer pain points during onboarding and using those insights to improve operational workflows.',
+   metrics:[{n:'12%',d:'up',l:'user satisfaction'}],
+   note:'empathy, but make it operational'}
+];
+
+const IMPACT=[
+  {n:'30%',d:'down',l:'reduction in repeated claim issues',acc:'blue',r:-2},
+  {n:'20%',d:'down',l:'faster team resolution speed',acc:'red',r:1.6},
+  {n:'18%',d:'down',l:'claim backlog reduction',acc:'green',r:-1.2},
+  {n:'15%',d:'up',l:'increase in first-pass resolution',acc:'pink',r:2.2}
+];
+
+const PROUD=[
+  {n:'30%',l:'improvement in claim resolution efficiency',acc:'blue'},
+  {n:'20%',l:'reduction in payment delays',acc:'green'},
+  {n:'25%',l:'improvement in issue resolution accuracy',acc:'pink'},
+  {n:'15%',l:'reduction in operational process time',acc:'red'}
+];
+
+/* playground data. The section is currently commented out in the HTML,
+   so the renderer below is guarded and simply waits until you bring it back. */
+const PG=[
+  {i:'001',t:'Product teardowns',s:'"Why does this app make me do this?"',acc:'blue'},
+  {i:'002',t:'UX explorations',s:'Taking an everyday workflow and asking how it could feel simpler.',acc:'pink'},
+  {i:'003',t:'AI experiments',s:'Where AI can remove repetitive work without adding another complicated layer.',acc:'green'},
+  {i:'004',t:'Data experiments',s:'Finding patterns in messy data and turning them into product questions.',acc:'amber'},
+  {i:'005',t:'User journeys',s:'Mapping complicated workflows and looking for the friction nobody talks about.',acc:'red'}
+];
+
+const TK=[
+  {g:'PRODUCT & PROJECT',dot:BLUE,items:['Jira','Confluence','Notion','Trello','ClickUp','Slack','Microsoft Teams']},
+  {g:'DATA & ANALYTICS',dot:GREEN,items:['SQL','Tableau','Power BI','Google Analytics','Mixpanel','Microsoft Excel','Google Sheets']},
+  {g:'PROTOTYPING',dot:PINK,items:['Figma','FigJam','Miro']},
+  {g:'AI & PRODUCTIVITY',dot:YEL,items:['ChatGPT','Claude','Perplexity']}
+];
+
+const XP=[
+  {dates:'MAY 2021 TO MAY 2022',co:'Jana Small Finance Bank',role:'Operations Assistant / Cashier',
+   sum:"Front-line banking: customer transactions, cash handling and daily service, my first close look at how a process feels to the person standing in front of it."},
+  {dates:'APR 2022 TO APR 2023',co:'Access Healthcare',role:'AR Caller',
+   sum:"Working unpaid insurance claims end to end: payer follow-ups, status tracking, and full-time life inside the claims workflow."},
+  {dates:'JUL 2023 TO DEC 2024',co:'AGS Health',role:'AR Caller',
+   sum:"High-volume claim follow-up and resolution. Somewhere in the repetition, the patterns behind denials became impossible to ignore."},
+  {dates:'JUN 2025 TO MAR 2026',co:'Vee Healthtek',role:'Senior Associate',
+   sum:"Claim resolution with room to dig deeper: root-cause analysis, cross-team coordination, and the process improvements that first felt like someone else's job.",
+   note:'← where the product questions got loud'}
+];
+
+/* ---------- case study content (honest, hedged, conceptual) ---------- */
+const CASES={
+ c1:{num:'01',acc:'blue',title:'Reducing repeated claim issues',
+   cat:'HEALTHCARE OPERATIONS × PROCESS IMPROVEMENT',
+   hero:{n:'30%',d:'down',l:'reduction in repeated issues'},
+   secs:[
+    {k:'THE CONTEXT',t:["This work happened inside a high-volume healthcare claims operation. Every day, claims moved through a familiar pipeline: identification, investigation, follow-up, resolution. The team's job was to keep that pipeline flowing.",
+      "At a high level, that's all a claims operation is: a queue with rules. The interesting part is what happens when the rules and the reality disagree."]},
+    {k:'THE PROBLEM',t:["Some claims kept coming back. An issue would be flagged, worked, closed, and then resurface on the same claim, sometimes more than once.",
+      "Every repeat meant rework: someone picked the claim back up, re-read its history, and started over. It was friction that never announced itself. It just quietly ate capacity."]},
+    {k:'WHAT I NOTICED',t:["When you work a queue every day, you start to feel patterns before you can prove them. Certain claim types, certain follow-up steps, certain handoffs kept producing repeats.",
+      "One area of improvement was the loop between investigation and follow-up: issues were being surfaced before they could actually be resolved, so they boomeranged."]},
+    {k:'INVESTIGATION',t:["Based on the workflow analysis and the patterns in day-to-day operational data, the recurring spots became visible. Conceptually, the workflow looked like this:"],
+     figs:[{f:'claimsFlow',cap:'FIG. 01 · CLAIM WORKFLOW',hand:'where the repeats lived'}]},
+    {k:'COLLABORATION',t:["Fixing the loop was never an operations-only job. The improvement only held because product, engineering and customer teams could see the same problem from their side of the screen. Conceptual representation of how the teams connected:"],
+     figs:[{f:'network',cap:'FIG. 02 · TEAM TOUCHPOINTS',hand:'conceptual, obviously'}]},
+    {k:'THE CHANGE',t:["At a high level, the improvement was about closing the loop instead of restarting it: making sure that when an issue was identified, the information needed to actually resolve it travelled with the claim, and that follow-up happened at the point in the workflow where it could stick.",
+      "The specifics lived in the process. The principle was simple: stop letting the same problem find a new owner."]}
+   ],
+   outcome:[{n:'30%',d:'down',l:'reduction in repeated issues'},{n:'20%',d:'up',l:'improvement in team resolution speed'}],
+   learned:"One thing this work reinforced for me: the fastest way to understand a workflow isn't always to look at the workflow diagram. Sometimes you need to talk to the person who lives inside it every day."},
+
+ c2:{num:'02',acc:'amber',title:'Finding the pattern behind claim denials',
+   cat:'DATA × ROOT-CAUSE ANALYSIS',
+   hero:{n:'18%',d:'down',l:'claim backlog reduction'},
+   secs:[
+    {k:'THE CONTEXT',t:["Denials are the part of healthcare claims operations everyone feels and nobody loves. They arrive in volume, each one carrying a reason, and the default response is to work them one at a time.",
+      "In a high-volume environment, that keeps you busy, and keeps the backlog growing at the same time."]},
+    {k:'THE PROBLEM',t:["The backlog wasn't just big; it was uniform. Every denial got roughly the same attention, regardless of why it happened or whether it was actually fixable.",
+      "The question that started bugging me: were these hundreds of separate problems, or a handful of patterns wearing hundreds of costumes?"]},
+    {k:'INVESTIGATION',t:["Using the operational data I had access to, I started grouping denials instead of only working them: by reason, by stage, by what happened after follow-up.",
+      "Root-cause analysis on the biggest groups showed a small number of causes generating a disproportionate share of the backlog. The shape of that insight looked something like this:"],
+     figs:[{f:'dash',cap:'FIG. 01 · DENIALS BY REASON',hand:'conceptual data view, not real data, just the shape of the idea'}]},
+    {k:'THE FLOW',t:["At a high level, the change in approach looked like this: from working denials one by one to finding the pattern, fixing the cause, and letting resolution improve downstream:"],
+     figs:[{f:'denialsFlow',cap:'FIG. 02 · THE FLOW',hand:'conceptual reconstruction'}]},
+    {k:'THE CHANGE',t:["Based on that analysis, the process started grouping instead of only queueing: prioritising denial types that were both frequent and fixable, and pushing prevention upstream, closer to where each root cause actually lived.",
+      "Less energy on denials nobody could win. More energy on the ones that could actually be resolved."]}
+   ],
+   outcome:[{n:'18%',d:'down',l:'claim backlog reduction'},{n:'15%',d:'up',l:'increase in first-pass resolution'}],
+   learned:"Data tells you what is happening; it rarely confesses why on its own. The \u201Cwhy\u201D came from combining the numbers with what the team already knew from living in the queue. Neither half was enough by itself."},
+
+ c3:{num:'03',acc:'green',title:'Making workflow tracking clearer',
+   cat:'WORKFLOW × CROSS-FUNCTIONAL COLLABORATION',
+   hero:{n:'20%',d:'down',l:'operational friction reduction'},
+   secs:[
+    {k:'THE CONTEXT',t:["One workflow, several teams, everyone holding a different piece of it. Each team owned a stage, and status lived wherever the last person had left it."]},
+    {k:'THE PROBLEM',t:["The inefficiency wasn't in any single team's work. It lived in the seams. Work items waited, not because someone was slow, but because nobody could easily see where they were, who had them, or what had happened last.",
+      "The friction was hiding between teams, not inside them."]},
+    {k:'INVESTIGATION',t:["I gathered feedback from across the teams touching the workflow, the places where people guessed, duplicated work, or simply waited, and mapped where information was getting lost at handoffs. The concept that came out of it:"],
+     figs:[{f:'teams',cap:'FIG. 01 · CONVERGING ON ONE VIEW',hand:'conceptual reconstruction'}]},
+    {k:'THE CHANGE',t:["At a high level, the change was a shared view of the workflow: one place where status was visible across teams, so follow-up could be triggered by the state of the work instead of by someone noticing.",
+      "Less \u201Cwhere is it?\u201D More \u201Chere it is.\u201D"]}
+   ],
+   outcome:[{n:'20%',d:'down',l:'reduction in operational friction'}],
+   learned:"This one taught me systems thinking the honest way: you can optimise every team and still have a slow system. Sometimes the unit that matters is the space between teams."},
+
+ c4:{num:'04',acc:'pink',title:'Understanding the customer before fixing the process',
+   cat:'CUSTOMER EXPERIENCE × OPERATIONS',
+   hero:{n:'12%',d:'up',l:'user satisfaction improvement'},
+   secs:[
+    {k:'THE CONTEXT',t:["Onboarding is where an operations process meets a real human being for the first time. Everything a customer experiences there, forms, waits, unclear next steps, sets their expectations for everything after."]},
+    {k:'THE PROBLEM',t:["The process worked. It was complete, compliant, and it moved. But looking at what customers actually went through during onboarding, there were pain points the process had quietly grown around: steps that made sense internally and confused externally.",
+      "The workflow was fine on paper and bumpy in person."]},
+    {k:'INVESTIGATION',t:["Mapping the customer's journey against the operational workflow showed exactly where the two disagreed: the moments where a customer hit friction and reached for support:"],
+     figs:[{f:'journey',cap:'FIG. 01 · CUSTOMER JOURNEY',hand:'friction highlighted'}]},
+    {k:'THE CHANGE',t:["Those insights fed back into the operational workflow and its policies, reordering steps, clarifying what a customer needed to know and when, so fewer journeys detoured through support.",
+      "The fix wasn't a new product. It was empathy turned into process."]}
+   ],
+   outcome:[{n:'12%',d:'up',l:'improvement in user satisfaction'}],
+   learned:"I used to think of the customer as the end of the process. Turns out they're the best diagnostic tool you have. You just have to treat their experience as an input, not background noise."}
+};
+const ORDER=['c1','c2','c3','c4'];
+
+/* =====================================================================
+   HAND-DRAWN SVG DIAGRAM BUILDERS (all conceptual reconstructions)
+   ===================================================================== */
+function box(x,y,w,h,txt,o={}){
+  return `<g filter="url(#rough)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${o.fill||PAPER}" stroke="${o.stroke||INK}" stroke-width="${o.sw||2.2}"/></g>
+  <text x="${x+w/2}" y="${y+h/2+1}" text-anchor="middle" dominant-baseline="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="${o.fs||13}" letter-spacing="1" fill="${INK}">${txt}</text>`;
+}
+function hArrow(a,b,y){return `
+  <path class="dp" pathLength="1" d="M ${a} ${y} C ${a+12} ${y-7}, ${b-12} ${y+7}, ${b-4} ${y}" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M ${b-2} ${y} L ${b-13} ${y-7} M ${b-2} ${y} L ${b-13} ${y+7}" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>`;}
+function vArrow(x,a,b){return `
+  <path class="dp" pathLength="1" d="M ${x} ${a} C ${x-6} ${a+8}, ${x+6} ${b-8}, ${x} ${b-3}" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M ${x} ${b-1} L ${x-7} ${b-11} M ${x} ${b-1} L ${x+7} ${b-11}" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>`;}
+function open(w,h,label){return `<svg class="diag animsvg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" xmlns="http://www.w3.org/2000/svg">`;}
+
+function chainH(items,o={}){
+  const bw=o.bw||152,bh=o.bh||58,gap=o.gap||44,top=118,H=205;
+  const W=o.w||items.length*bw+(items.length-1)*gap+40;
+  const x0=20;let s=open(W,H,o.label);
+  items.forEach((it,i)=>{
+    const x=x0+i*(bw+gap),hl=o.hl&&o.hl.includes(i);
+    s+=box(x,top,bw,bh,it.t,{stroke:it.c||(hl?RED:INK),fill:hl?'#F8E3DC':(it.f||PAPER),fs:it.fs||12.5});
+    if(i<items.length-1)s+=hArrow(x+bw+3,x+bw+gap-3,top+bh/2);
+  });
+  if(o.loop){
+    const xf=x0+o.loop.from*(bw+gap)+bw/2, xt=x0+o.loop.to*(bw+gap)+bw/2;
+    s+=`<path class="dp" pathLength="1" d="M ${xf} ${top} C ${xf} 26, ${xt} 26, ${xt} ${top-8}" fill="none" stroke="${RED}" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M ${xt} ${top-6} L ${xt-8} ${top-18} M ${xt} ${top-6} L ${xt+8} ${top-18}" fill="none" stroke="${RED}" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="${(xf+xt)/2}" y="42" text-anchor="middle" font-family="Caveat,cursive" font-weight="600" font-size="21" fill="${RED}">${o.loop.label}</text>`;
+  }
+  return s+'</svg>';
+}
+function chainV(items,o={}){
+  const bw=230,bh=54,x=36,gap=32,H=16+items.length*bh+(items.length-1)*gap+10,W=500;
+  let s=open(W,H,o.label);
+  items.forEach((it,i)=>{
+    const y=14+i*(bh+gap),hl=o.hl&&o.hl.includes(i);
+    s+=box(x,y,bw,bh,it.t,{stroke:it.c||(hl?RED:INK),fill:hl?'#F8E3DC':(it.f||PAPER),fs:13});
+    if(i<items.length-1)s+=vArrow(x+bw/2,y+bh+2,y+bh+gap-2);
+    if(hl&&o.hlLabel){
+      const cy=y+bh/2;
+      s+=`<path d="M ${x+bw+10} ${cy} L ${x+bw+44} ${cy}" fill="none" stroke="${RED}" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="${x+bw+52}" y="${cy+7}" font-family="Caveat,cursive" font-weight="600" font-size="20" fill="${RED}">${o.hlLabel}</text>`;
+    }
+  });
+  if(o.loop){
+    const yFrom=14+o.loop.from*(bh+gap)+bh/2, yTo=14+o.loop.to*(bh+gap)+bh/2;
+    s+=`<path class="dp" pathLength="1" d="M ${x+bw} ${yFrom} C ${x+bw+80} ${yFrom-6}, ${x+bw+80} ${yTo+6}, ${x+bw+4} ${yTo}" fill="none" stroke="${RED}" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M ${x+bw+6} ${yTo} L ${x+bw+16} ${yTo-8} M ${x+bw+6} ${yTo} L ${x+bw+16} ${yTo+8}" fill="none" stroke="${RED}" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="${x+bw+88}" y="${(yFrom+yTo)/2}" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${RED}">${o.loop.label}</text>`;
+  }
+  return s+'</svg>';
+}
+const FIGS={
+  claimsFlow(vert){
+    const items=[{t:'CLAIM'},{t:'IDENTIFICATION'},{t:'INVESTIGATION'},{t:'FOLLOW-UP'},{t:'RESOLUTION'}];
+    return vert
+      ? chainV(items,{hl:[2,3],loop:{from:3,to:2,label:'repeats happened here'},label:'Claim workflow with the repeat loop, conceptual reconstruction'})
+      : chainH(items,{hl:[2,3],loop:{from:3,to:2,label:'repeats happened here'},label:'Claim workflow with the repeat loop, conceptual reconstruction'});
+  },
+  denialsFlow(vert){
+    const items=[{t:'LOTS OF DENIALS',c:RED},{t:'PATTERN IDENTIFICATION'},{t:'ROOT CAUSE'},{t:'PROCESS CHANGE'},{t:'BETTER RESOLUTION',c:GREEN,f:'#E4F0E6'}];
+    return vert
+      ? chainV(items,{label:'From denials to better resolution, conceptual reconstruction'})
+      : chainH(items,{label:'From denials to better resolution, conceptual reconstruction'});
+  },
+  network(vert){
+    if(vert){
+      const s=open(360,470,'Team touchpoints around one problem, conceptual representation');
+      s+=box(70,16,220,50,'PRODUCT',{stroke:BLUE});
+      s+=box(70,96,220,50,'ENGINEERING');
+      s+=box(55,196,250,62,'OPERATIONS',{stroke:BLUE,sw:2.6,fill:'#E8EEFA'});
+      s+=box(70,346,220,50,'CUSTOMER TEAMS',{stroke:PINK});
+      s+=vArrow(180,68,94)+vArrow(180,148,194)+vArrow(180,260,344);
+      s+=`<text x="352" y="230" text-anchor="end" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">same problem,</text>
+          <text x="352" y="254" text-anchor="end" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">different seats</text>`;
+      return s+'</svg>';
+    }
+    const s=open(470,340,'Team touchpoints around one problem, conceptual representation');
+    s+=`<ellipse cx="235" cy="172" rx="212" ry="152" fill="none" stroke="${SOFT}" stroke-width="1.6" stroke-dasharray="7 7" filter="url(#rough)"/>`;
+    s+=box(20,26,140,52,'PRODUCT',{stroke:BLUE});
+    s+=box(310,26,150,52,'ENGINEERING');
+    s+=box(160,140,150,62,'OPERATIONS',{stroke:BLUE,sw:2.6,fill:'#E8EEFA'});
+    s+=box(155,272,160,52,'CUSTOMER TEAMS',{stroke:PINK});
+    s+=`<g filter="url(#rough)"><path d="M120 80 C 150 105, 165 118, 190 138" fill="none" stroke="${SOFT}" stroke-width="2"/>
+        <path d="M350 80 C 320 105, 305 118, 280 138" fill="none" stroke="${SOFT}" stroke-width="2"/>
+        <path d="M235 270 C 234 245, 236 225, 235 204" fill="none" stroke="${SOFT}" stroke-width="2"/></g>`;
+    s+=`<text x="22" y="190" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">same problem,</text>
+        <text x="22" y="214" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">different seats</text>`;
+    return s+'</svg>';
+  },
+  teams(vert){
+    if(vert){
+      const s=open(380,430,'Two teams converging on one shared workflow view, conceptual reconstruction');
+      s+=box(35,18,180,54,'TEAM A');
+      s+=box(35,300,180,54,'TEAM B');
+      s+=box(65,170,250,72,'SHARED WORKFLOW VIEW',{stroke:BLUE,sw:2.6,fill:'#E8EEFA',fs:12.5});
+      s+=`<path class="dp" pathLength="1" d="M125 74 C 130 100, 145 125, 165 168" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M165 168 L155 156 M165 168 L152 164" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+          <path class="dp" pathLength="1" d="M125 298 C 130 272, 145 247, 165 246" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M165 246 L152 250 M165 246 L155 258" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>`;
+      s+=`<text x="330" y="160" text-anchor="end" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">nobody could see</text>
+          <text x="330" y="184" text-anchor="end" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">the other's work</text>
+          <text x="190" y="392" text-anchor="middle" font-family="Caveat,cursive" font-weight="600" font-size="20" fill="${GREEN}">one place to look</text>`;
+      return s+'</svg>';
+    }
+    const s=open(780,300,'Two teams converging on one shared workflow view, conceptual reconstruction');
+    s+=box(24,42,150,56,'TEAM A');
+    s+=box(24,202,150,56,'TEAM B');
+    s+=box(500,112,250,76,'SHARED WORKFLOW VIEW',{stroke:BLUE,sw:2.6,fill:'#E8EEFA',fs:13.5});
+    s+=`<path class="dp" pathLength="1" d="M174 70 C 320 26, 420 62, 496 126" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M498 128 L484 122 M498 128 L490 114" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="dp" pathLength="1" d="M174 230 C 320 274, 420 238, 496 174" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M498 172 L484 178 M498 172 L490 186" fill="none" stroke="${INK}" stroke-width="2.2" stroke-linecap="round"/>`;
+    s+=`<g filter="url(#rough)"><path d="M99 98 L99 202" fill="none" stroke="${SOFT}" stroke-width="1.8" stroke-dasharray="6 6"/></g>
+        <text x="120" y="128" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">nobody could see</text>
+        <text x="120" y="152" font-family="Caveat,cursive" font-weight="600" font-size="19" fill="${SOFT}">the other's work</text>
+        <text x="625" y="232" text-anchor="middle" font-family="Caveat,cursive" font-weight="600" font-size="21" fill="${GREEN}">one place to look</text>`;
+    return s+'</svg>';
+  },
+  dash(vert){
+    const small=vert||innerWidth<640;
+    const W=small?380:520,H=330;
+    const bw=small?30:44,gp=small?16:22,base=258,x0=small?46:66;
+    const hs=small?[62,108,50,142,84,36]:[70,120,55,160,95,40];
+    const cols=[YEL,PINK,BLUE,GREEN,RED,'rgba(34,32,27,.3)'];
+    let s=open(W,H,'Conceptual data view of denials grouped by reason, illustrative shape only, not real data');
+    s+=`<g filter="url(#rough)"><rect x="10" y="10" width="${W-20}" height="${H-20}" rx="12" fill="${PAPER}" stroke="${INK}" stroke-width="2.2"/></g>
+    <path d="M10 54 H ${W-10}" stroke="${INK}" stroke-width="1.6" opacity=".5"/>
+    <text x="26" y="38" font-family="'Space Mono',monospace" font-size="${small?9:11}" letter-spacing="2" fill="${INK}">CONCEPTUAL DATA VIEW</text>
+    <text x="${W-24}" y="38" text-anchor="end" font-family="Caveat,cursive" font-weight="600" font-size="${small?14:17}" fill="${SOFT}">the shape of the idea, not real data</text>`;
+    s+=`<g filter="url(#rough)"><path d="M34 ${base} H ${W-40} M34 84 V ${base}" fill="none" stroke="${INK}" stroke-width="1.8"/></g>`;
+    hs.forEach((h,i)=>{s+=`<g filter="url(#rough)"><rect x="${x0+i*(bw+gp)}" y="${base-h}" width="${bw}" height="${h}" fill="${cols[i]}" stroke="${INK}" stroke-width="1.4"/></g>
+      <text x="${x0+i*(bw+gp)+bw/2}" y="${base+18}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="${small?8:9}" fill="${SOFT}">R${i+1}</text>`;});
+    s+=`<text x="${x0+5*(bw+gp)+bw/2}" y="${base+18}" text-anchor="middle" font-family="'Space Mono',monospace" font-size="${small?8:9}" fill="${SOFT}">other</text>`;
+    const rc=x0+3*(bw+gp)+bw/2;
+    s+=`<g filter="url(#rough)"><ellipse cx="${rc}" cy="${base-hs[3]/2}" rx="${bw/2+16}" ry="${hs[3]/2+18}" fill="none" stroke="${RED}" stroke-width="2.4"/></g>
+    <text x="${rc}" y="${base-hs[3]-46<30?base-hs[3]-26:base-hs[3]-46}" text-anchor="middle" font-family="Caveat,cursive" font-weight="600" font-size="20" fill="${RED}">root cause</text>`;
+    return s+'</svg>';
+  },
+  journey(){
+    const items=[{t:'START'},{t:'ONBOARDING'},{t:'USER ACTION'},{t:'FRICTION'},{t:'SUPPORT'},{t:'RESOLUTION'}];
+    return chainV(items,{hl:[3],hlLabel:'friction lived here',label:'Customer journey with friction highlighted, conceptual reconstruction'});
+  }
+};
+
+/* =====================================================================
+   RENDERERS
+   ===================================================================== */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const dirIcon=d=>`<svg class="ic ${d==='up'?'ic--up':''}" aria-hidden="true"><use href="#i-${d==='down'?'dn':'up'}"/></svg>`;
+
+/* project cards */
+ $('#workGrid').innerHTML=PROJECTS.map((p,i)=>`
+  <div class="pw pc-${p.treat} reveal" style="--d:${i*0.06}s">
+    <div class="tilt pcard a-${p.acc}" style="--r:${[-.7,.8,-.5,.6][i%4]}deg">
+      ${p.treat==='t1'?'<span class="tape tape--l" aria-hidden="true"></span><span class="tape tape--r" aria-hidden="true"></span>':''}
+      ${p.treat==='t2'?'<span class="tab">CASE ${p.num}</span>':''}
+      <div class="pcard__in">
+        ${p.treat==='t3'?'<span class="hole hole--a" aria-hidden="true"></span><span class="hole hole--b" aria-hidden="true"></span>':''}
+        <span class="pcard__num" aria-hidden="true">${p.num}</span>
+        <p class="pcard__note hand" aria-hidden="true">${p.note}</p>
+        <span class="pcard__cat">${p.cat}</span>
+        <h3>${p.title}</h3>
+        <p class="pcard__desc">${p.desc}</p>
+        <div class="pcard__metrics">
+          ${p.metrics.map(m=>`<span class="pm"><span class="pm__row"><span class="pm__num">${m.n}</span>${dirIcon(m.d)}</span><span class="pm__lbl">${m.l}</span></span>`).join('')}
+        </div>
+        <a class="pcard__cta" href="#${p.id}">READ CASE STUDY <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+      </div>
+    </div>
+  </div>`).join('');
+
+/* impact pins */
+ $('#impactPins').innerHTML=IMPACT.map((m,i)=>`
+  <div class="reveal" style="--d:${i*0.08}s"><div class="tilt pin a-${m.acc}" style="--r:${m.r}deg">
+    <span class="tape tape--c" aria-hidden="true"></span>
+    <span class="pin__num">${m.n}${dirIcon(m.d)}</span>
+    <span class="pin__cap">${m.l}</span>
+  </div></div>`).join('');
+
+/* proud receipts */
+ $('#proudGrid').innerHTML=PROUD.map((r,i)=>`
+  <div class="reveal" style="--d:${i*0.06}s"><div class="tilt receipt a-${r.acc}" style="--r:${[-1,1.2,-.8,1][i%4]}deg">
+    <span class="receipt__k"><svg aria-hidden="true"><use href="#i-star"/></svg>RECEIPT · ${String(i+1).padStart(2,'0')}</span>
+    <span class="receipt__num">${r.n}</span>
+    <p>${r.l}</p>
+  </div></div>`).join('');
+
+/* playground cards. Guarded: renders only if the section exists in the HTML. */
+const pgList=$('#pgList');
+if(pgList) pgList.innerHTML=PG.map((g,i)=>`
+  <article class="pg-row reveal a-${g.acc}" style="--d:${i*0.05}s">
+    <span class="pg-idx">EXPERIMENT ${g.i}</span>
+    <div><h3>${g.t}</h3><p class="pg-sub">${g.s}</p></div>
+    <span class="stamp">WORK IN&nbsp;PROGRESS</span>
+  </article>`).join('');
+
+/* toolkit */
+ $('#tkWrap').innerHTML=TK.map(g=>`
+  <div class="tk-group reveal">
+    <p class="tk-group__h"><i style="background:${g.dot}"></i>${g.g}</p>
+    <div class="tk-chips">${g.items.map((t,j)=>`<span class="chip" style="--r:${j%2?1.4:-1.2}deg">${t}</span>`).join('')}</div>
+  </div>`).join('');
+
+/* experience */
+ $('#xpList').innerHTML=XP.map((r,i)=>`
+  <div class="xp-row reveal" style="--d:${i*0.05}s">
+    <span class="xp-dates">${r.dates}</span>
+    <div>
+      <h3>${r.co}</h3>
+      <span class="xp-role">${r.role}</span>
+      <p class="xp-sum">${r.sum}</p>
+      ${r.note?`<span class="xp-note">${r.note}</span>`:''}
+    </div>
+  </div>`).join('');
+
+/* =====================================================================
+   BEHAVIOUR: reveal observer, nav, menu, parallax, case routing
+   ===================================================================== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+function observeAll(root){(root||document).querySelectorAll('.reveal, .animsvg').forEach(el=>io.observe(el));}
+observeAll(document);
+
+/* nav shrink + active section */
+const nav=$('#nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+const secIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting)$$('.nav__links a').forEach(a=>a.classList.toggle('active',a.dataset.sec===e.target.id));
+}),{rootMargin:'-40% 0px -55% 0px'});
+/* 'playground' stays in the list so it works again the moment you re-enable the section */
+['home','work','about','thinking','playground','contact'].forEach(id=>{const s=document.getElementById(id);if(s)secIO.observe(s);});
+
+/* mobile menu */
+const burger=$('#burger'),menu=$('#menu');
+function setMenu(open){
+  document.body.classList.toggle('menu-open',open);
+  burger.setAttribute('aria-expanded',open);
+  burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+  $('#main').inert=open;document.querySelector('.footer').inert=open;
+  if(open)menu.querySelector('a').focus();
+}
+burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});
+addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.body.classList.contains('menu-open'))setMenu(false);closeCase();}});
+
+/* gentle parallax on the polaroid */
+const pol=$('#polaroidWrap');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(pol&&!reduced){
+  let tick=false;
+  addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{
+    const r=pol.getBoundingClientRect(),off=(r.top-innerHeight/2)*-0.05;
+    pol.style.transform=`translateY(${Math.max(-22,Math.min(22,off)).toFixed(1)}px)`;tick=false;});},{passive:true});
+}
+
+/* ---------- case study overlay (hash-routed: #c1 through #c4) ---------- */
+const caseView=$('#caseView'),caseBody=$('#caseBody'),cvPos=$('#cvPos');
+let currentCase=null,lastFocus=null;
+const vert=()=>innerWidth<640;
+
+function figureHTML(fig){
+  return `<figure class="diagram"><div class="figbox" data-fig="${fig.f}">${FIGS[fig.f](vert())}</div>
+  <figcaption class="fig"><span>${fig.cap}</span><em>${fig.hand}</em></figcaption></figure>`;
+}
+function renderCase(id){
+  const c=CASES[id],idx=ORDER.indexOf(id),next=ORDER[(idx+1)%ORDER.length];
+  cvPos.textContent=`CASE ${c.num} / ${ORDER.length}`;
+  caseBody.innerHTML=`
+    <p class="cs-k">CASE STUDY ${c.num}</p>
+    <h2 class="cs-title">${c.title}</h2>
+    <p class="cs-cat">${c.cat}</p>
+    <div class="cs-hero a-${c.acc}"><span class="n">${c.hero.n}${dirIcon(c.hero.d)}</span><span class="l">${c.hero.l}</span></div>
+    ${c.secs.map(s=>`<section class="cs-sec"><h3>${s.k}</h3>${s.t.map(p=>`<p>${p}</p>`).join('')}${(s.figs||[]).map(figureHTML).join('')}</section>`).join('')}
+    <div class="cs-outcome a-${c.acc}">
+      ${c.outcome.map(o=>`<div><span class="n">${o.n}${dirIcon(o.d)}</span><span class="l">${o.l}</span></div>`).join('')}
+    </div>
+    <div class="cs-learned"><span class="cs-learned__k">what I learned →</span><p>${c.learned}</p></div>
+    <div class="cs-next">
+      <span class="cs-next__k">KEEP READING</span>
+      <a href="#${next}">${CASES[next].title} <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+      <a class="cs-backall" href="#work">↑ back to all work</a>
+    </div>`;
+  observeAll(caseBody);
+}
+function openCase(id){
+  if(currentCase===id){return;}
+  currentCase=id;lastFocus=document.activeElement;
+  renderCase(id);
+  caseView.hidden=false;requestAnimationFrame(()=>caseView.scrollTop=0);
+  document.body.classList.add('locked');
+  $('#main').inert=true;document.querySelector('.footer').inert=true;nav.inert=true;
+  $('#cvClose').focus();
+}
+function closeCase(){
+  if(currentCase===null)return;
+  currentCase=null;caseView.hidden=true;
+  document.body.classList.remove('locked');
+  $('#main').inert=false;document.querySelector('.footer').inert=false;nav.inert=false;
+  if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+ $('#cvClose').addEventListener('click',()=>{location.hash='';});
+ $('#cvBack').addEventListener('click',()=>{location.hash='';});
+function handleHash(){const h=location.hash.slice(1);if(CASES[h])openCase(h);else closeCase();}
+addEventListener('hashchange',handleHash);handleHash();
+
+/* re-render diagrams on orientation/size changes so labels stay readable */
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{
+  if(currentCase)$$('.figbox').forEach(el=>{el.innerHTML=FIGS[el.dataset.fig](vert());el.querySelector('svg').classList.add('in');});
+},200);});
+
+ $('#year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
