@@ -25,7 +25,7 @@ const PROJECTS=[
   /* CASE 01: A-WAY. A product-definition concept, so no impact numbers,
      only an honest status. Everything else below is documented work. */
   {id:'away',num:'01',treat:'t3',acc:'blue',
-   title:'Turning a study abroad brief into a real product',
+   title:'A-WAY Consultancy: Turning a study abroad brief into a real product',
    cat:'PRODUCT STRATEGY × PRODUCT DEFINITION · CONCEPT',
    desc:'I took a broad study abroad consultancy brief and worked backwards from the real problem: helping counsellors know which students need attention, what is blocking them, and what should happen next.',
    metrics:null,
@@ -109,7 +109,7 @@ const XP=[
 const CASES={
 
  /* CASE 01 · A-WAY CONSULTANCY (product concept, based on a supplied brief) */
- away:{num:'01',acc:'blue',title:'Turning a study abroad brief into a real product',
+ away:{num:'01',acc:'blue',title:'A-WAY Consultancy: Turning a study abroad brief into a real product',
    cat:'ASSOCIATE PRODUCT MANAGEMENT CASE STUDY · A-WAY CONSULTANCY',
    meta:'ROLE: ASSOCIATE PRODUCT MANAGER (CASE STUDY) · FOCUS: PRODUCT STRATEGY / CRM / WORKFLOW<br/>DOMAIN: STUDY ABROAD / EDTECH · STATUS: CONCEPT / PRODUCT DEFINITION · BASED ON A SUPPLIED PRODUCT BRIEF',
    hero:{n:'1',d:null,l:'question I kept coming back to: who needs my attention right now?'},
