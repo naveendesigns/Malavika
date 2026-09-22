@@ -64,7 +64,6 @@ const IMPACT=[
   {n:'15%',d:'up',l:'increase in first-pass resolution',acc:'pink',r:2.2}
 ];
 
-/* ---------- "work I'm proud of" receipts (documented achievements) ---------- */
 /* ---------- playground items (section currently hidden; kept for later) ---------- */
 const PG=[
   {i:'001',t:'Product teardowns',s:'"Why does this app make me do this?"',acc:'blue'},
