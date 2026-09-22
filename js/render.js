@@ -1,12 +1,12 @@
 /* =====================================================================
-   RENDER — turns the data in js/data.js into HTML.
+   RENDER - turns the data in js/data.js into HTML.
 
    Main page: fills #workGrid, #impactPins, #tkWrap, #xpList
    (and #pgList if the playground section is re-enabled).
    Case studies: secHTML() builds each case-study section from the
    block types described in js/data.js.
 
-   You rarely need to touch this file to change content — edit data.js.
+   You rarely need to touch this file to change content - edit data.js.
    ===================================================================== */
 
 /* tiny DOM helpers (also used by app.js, which loads after this file) */
@@ -42,13 +42,6 @@ const dirIcon=d=>`<svg class="ic ${d==='up'?'ic--up':''}" aria-hidden="true"><us
     <span class="tape tape--c" aria-hidden="true"></span>
     <span class="pin__num">${m.n}${dirIcon(m.d)}</span>
     <span class="pin__cap">${m.l}</span>
-  </div></div>`).join('');
-
- $('#proudGrid').innerHTML=PROUD.map((r,i)=>`
-  <div class="reveal" style="--d:${i*0.06}s"><div class="tilt receipt a-${r.acc}" style="--r:${[-1,1.2,-.8,1][i%4]}deg">
-    <span class="receipt__k"><svg aria-hidden="true"><use href="#i-star"/></svg>RECEIPT · ${String(i+1).padStart(2,'0')}</span>
-    <span class="receipt__num">${r.n}</span>
-    <p>${r.l}</p>
   </div></div>`).join('');
 
 /* playground cards: guarded, renders only if the section exists (it's hidden by default) */
