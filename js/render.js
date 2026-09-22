@@ -32,7 +32,7 @@ const dirIcon=d=>`<svg class="ic ${d==='up'?'ic--up':''}" aria-hidden="true"><us
         ${p.metrics
           ?`<div class="pcard__metrics">${p.metrics.map(m=>`<span class="pm"><span class="pm__row"><span class="pm__num">${m.n}</span>${dirIcon(m.d)}</span><span class="pm__lbl">${m.l}</span></span>`).join('')}</div>`
           :`<div class="pcard__status"><span class="pst">STATUS: CONCEPT · PRODUCT DEFINITION</span><span class="pst">PROPOSED METRIC: STUDENT PROGRESSION</span></div>`}
-        <a class="pcard__cta" href="#${p.id}">READ CASE STUDY <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+        <a class="pcard__cta" href="${p.href||'#'+p.id}">READ CASE STUDY <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
       </div>
     </div>
   </div>`).join('');
