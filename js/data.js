@@ -1,5 +1,5 @@
 /* =====================================================================
-   DATA — ALL THE CONTENT LIVES HERE.
+   DATA - ALL THE CONTENT LIVES HERE.
 
    This is the file you will edit most often:
    - project cards on the "selected work" grid   → PROJECTS
@@ -20,16 +20,16 @@ const INK='#22201B', SOFT='rgba(34,32,27,.62)', PAPER='#FFFDF6',
 /* ---------- project cards on the main page ---------- */
 /* treat: 't1' taped sheet · 't2' folder tab · 't3' punched folder · 't4' legal pad
    acc:  'blue' | 'amber' | 'green' | 'pink'
-   metrics: use {n:'30%',d:'down'|'up',l:'label'} — or null for concept projects */
+   metrics: use {n:'30%',d:'down'|'up',l:'label'} - or null for concept projects */
 const PROJECTS=[
   /* CASE 01: A-WAY. A product-definition concept, so no impact numbers,
      only an honest status. Everything else below is documented work. */
   {id:'away',num:'01',treat:'t3',acc:'blue',
-   title:'A CRM built around the student journey',
+   title:'Turning a study abroad brief into a real product',
    cat:'PRODUCT STRATEGY × PRODUCT DEFINITION · CONCEPT',
-   desc:'An Associate Product Manager case study: taking a broad study-abroad platform brief and narrowing it to an MVP that answers one question, who needs attention right now?',
+   desc:'I took a broad study abroad consultancy brief and worked backwards from the real problem: helping counsellors know which students need attention, what is blocking them, and what should happen next.',
    metrics:null,
-   note:'the "what not to build" project'},
+   note:'a product exercise in deciding what matters first'},
   {id:'c1',num:'02',treat:'t1',acc:'blue',
    title:'Reducing repeated claim issues',
    cat:'HEALTHCARE OPERATIONS × PROCESS IMPROVEMENT',
@@ -65,13 +65,6 @@ const IMPACT=[
 ];
 
 /* ---------- "work I'm proud of" receipts (documented achievements) ---------- */
-const PROUD=[
-  {n:'30%',l:'improvement in claim resolution efficiency',acc:'blue'},
-  {n:'20%',l:'reduction in payment delays',acc:'green'},
-  {n:'25%',l:'improvement in issue resolution accuracy',acc:'pink'},
-  {n:'15%',l:'reduction in operational process time',acc:'red'}
-];
-
 /* ---------- playground items (section currently hidden; kept for later) ---------- */
 const PG=[
   {i:'001',t:'Product teardowns',s:'"Why does this app make me do this?"',acc:'blue'},
@@ -83,10 +76,10 @@ const PG=[
 
 /* ---------- toolkit ---------- */
 const TK=[
-  {g:'PRODUCT & PROJECT',dot:BLUE,items:['Jira','Confluence','Notion','Trello','ClickUp','Slack','Microsoft Teams']},
-  {g:'DATA & ANALYTICS',dot:GREEN,items:['SQL','Tableau','Power BI','Google Analytics','Mixpanel','Microsoft Excel','Google Sheets']},
-  {g:'PROTOTYPING',dot:PINK,items:['Figma','FigJam','Miro']},
-  {g:'AI & PRODUCTIVITY',dot:YEL,items:['ChatGPT','Claude','Perplexity']}
+  {g:'PRODUCT',dot:BLUE,items:['Jira','Notion','Confluence']},
+  {g:'ANALYTICS',dot:GREEN,items:['SQL','Excel','Power BI','Tableau']},
+  {g:'DESIGN',dot:PINK,items:['Figma','FigJam']},
+  {g:'AI',dot:YEL,items:['ChatGPT','Claude']}
 ];
 
 /* ---------- experience ---------- */
@@ -103,7 +96,7 @@ const XP=[
 ];
 
 /* =====================================================================
-   CASE STUDIES — one object per project id.
+   CASE STUDIES - one object per project id.
 
    Each section (secs[]) can use any of these blocks:
    t: [paragraphs]            · quote: 'big handwritten quote'
@@ -117,10 +110,10 @@ const XP=[
 const CASES={
 
  /* CASE 01 · A-WAY CONSULTANCY (product concept, based on a supplied brief) */
- away:{num:'01',acc:'blue',title:'A CRM built around the student journey',
+ away:{num:'01',acc:'blue',title:'Turning a study abroad brief into a real product',
    cat:'ASSOCIATE PRODUCT MANAGEMENT CASE STUDY · A-WAY CONSULTANCY',
    meta:'ROLE: ASSOCIATE PRODUCT MANAGER (CASE STUDY) · FOCUS: PRODUCT STRATEGY / CRM / WORKFLOW<br/>DOMAIN: STUDY ABROAD / EDTECH · STATUS: CONCEPT / PRODUCT DEFINITION · BASED ON A SUPPLIED PRODUCT BRIEF',
-   hero:{n:'1',d:null,l:'question the whole product is built to answer: who needs my attention right now?'},
+   hero:{n:'1',d:null,l:'question I kept coming back to: who needs my attention right now?'},
    secs:[
     {k:'THE QUICK READ',t:[
       "Studying abroad looks like a simple checklist from the outside. Pick a university. Apply. Get an offer. Get a visa. Fly out.",
@@ -128,7 +121,7 @@ const CASES={
       "The product opportunity wasn't to build another CRM. It was to make that journey easier for everyone involved."]},
     {k:'BUSINESS CONTEXT · WHY THIS IS A PRODUCT PROBLEM, NOT JUST A CRM PROBLEM',t:[
       "The supplied brief describes a broad platform: CRM, student portal, application tracking, documents, appointments, analytics, university and course discovery, plus future AI capabilities. (From the brief.)",
-      "The first product decision I made was to resist treating every module as equally important. Before deciding what to build, I wanted to understand where the journey actually breaks. Three things stood out:"],
+      "The first thing I did was step back from the feature list. I did not want to treat every module as equally important. Before deciding what to build, I wanted to understand where the journey actually breaks. Three things stood out:"],
      cards:{cols:3,items:[
       {h:'Too many handoffs',p:'The student moves through nine stages. The organisation sees those stages through five different departments.'},
       {h:'Too much context',p:'Multiple people touch the same student. Knowing what happened last, and why, shouldn\u2019t require archaeology.'},
@@ -144,7 +137,7 @@ const CASES={
       {tag:'SECONDARY',h:'Admin',p:'Needs the bigger picture: pipeline, productivity and business performance.'},
       {tag:'END USER',h:'Student',p:'Doesn\u2019t need a CRM. Needs to know where they are and what to do next.'}],
      rnote:'priority is a product decision, not a statement about organisational importance'},
-    {k:'I STOPPED THINKING IN MODULES AND STARTED THINKING IN STAGES',t:[
+    {k:'I STOPPED LOOKING AT FEATURES AND STARTED LOOKING AT THE JOURNEY',t:[
       "The brief naturally breaks into departments and features. I reframed it around the student\u2019s journey instead. Click a stage to see how I thought about it:"],
      journey:{stages:[
       {n:'01 LEAD',g:'Understand who the student is and what they want.',f:'Information arrives scattered: forms, calls, WhatsApp, walk-ins.',o:'Capture the lead with an owner and a next action, not just a name.'},
@@ -198,28 +191,6 @@ const CASES={
     {k:'THE STUDENT SIDE',t:[
       "The employee interface is about managing complexity. The student interface is about reducing it: one next step at a time, no internal jargon."],
      mock:'student'},
-    {k:'PRODUCT REQUIREMENTS (WORKING DRAFT)',t:["Written as real product documentation, not decoration. Expand any epic:"],
-     reqs:[
-      {epic:'Lead Management',story:'As a counsellor, I want to see my assigned leads so I can prioritise who needs attention.',
-       goal:'No lead sits unowned or untouched.',
-       ac:['Lead has an owner','Lead has a current stage','Lead has a next follow-up date','Counsellor can add notes','Follow-up history is visible','Lead can be moved through defined stages'],
-       edge:['Lead arrives with no counsellor available: queue it with an assignment rule','The same lead is submitted twice: merge, keep both sources']},
-      {epic:'Student Profile',story:'As any employee, I want one page that tells me who this student is, where they are, and what happens next.',
-       goal:'Context in ten seconds.',
-       ac:['Current stage visible','Next action visible','Counsellor and team visible','Preferred countries and intended course visible','Recent activity visible'],
-       edge:['Student changes counsellor: ownership transfers, history stays intact']},
-      {epic:'Application Management',story:'As an admissions team member, I want each application tracked separately so I know exactly where each one stands.',
-       goal:'No application is \u201Cprobably fine.\u201D',
-       ac:['Each application has its own status','Document requirements per application','Status history recorded','Offers attached with conditions'],
-       edge:['Student applies to seven universities: seven independent threads, one student','An application is rejected: state preserved, next options surfaced']},
-      {epic:'Document Management',story:'As a visa officer, I want to see which documents are missing or rejected, not just which files exist.',
-       goal:'Documents as workflow, not storage.',
-       ac:['Checklist per stage and application','States: missing, uploaded, under review, approved, rejected','Rejection reason recorded','A re-request generates a task'],
-       edge:['Document rejected: reason and required next action shown','One document reused across applications: single source, many references']},
-      {epic:'Task Management',story:'As a counsellor, I want follow-ups to appear as dated tasks so nothing depends on memory.',
-       goal:'Attention is allocated by the product.',
-       ac:['Tasks have an owner and a due date','Overdue tasks surface on the dashboard','Completing a task logs to the timeline'],
-       edge:['Two teams update the same student: timeline and audit history make changes visible']}]},
     {k:'EDGE CASES · REAL PRODUCTS LIVE HERE',t:["These shaped more design decisions than the happy path did:"],
      edges:[
       {q:'What if a student applies to seven universities?',a:'Each application needs independent status and document requirements. One student, seven threads, no ambiguity.'},
