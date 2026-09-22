@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>A-WAY Consultancy · Product Management Case Study · Malavika</title>
+<meta name="description" content="A-WAY Consultancy: an Associate Product Manager case study. Turning a study abroad consultancy brief into a product built around one question: who needs my attention right now?"/>
+<meta name="theme-color" content="#F6F0E1"/>
+
+<!-- Same font stack as the portfolio -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="away.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- shared SVG defs: same sketchy filters + hand-drawn icons as the portfolio -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+    </filter>
+    <filter id="rough2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+    </filter>
+    <symbol id="i-arr" viewBox="0 0 24 14"><path d="M1 7 C 7 5 15 9 21 7 M16 2 l6 5 -6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-dn" viewBox="0 0 14 24"><path d="M7 1 C 5 7 9 15 7 21 M2 16 l5 6 5 -6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 14 24"><path d="M7 23 C 5 17 9 9 7 3 M2 8 l5 -6 5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="binder-holes" aria-hidden="true"><span></span><span></span><span></span></div>
+<a class="skip" href="#main">skip to content</a>
+
+<!-- ============ STICKY CASE STUDY BAR ============ -->
+<!-- BACK link: default target is the portfolio one level up (../index.html).
+     The JS makes it smarter: if the visitor actually arrived from the
+     portfolio, it uses history.back() so scroll position is preserved.
+     If your portfolio lives somewhere else, just change this href. -->
+<header class="aw-bar" id="awBar">
+  <span class="aw-bar__tape aw-bar__tape--l" aria-hidden="true"></span>
+  <span class="aw-bar__tape aw-bar__tape--r" aria-hidden="true"></span>
+  <a class="aw-bar__back" id="backLink" href="../index.html">
+    <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg> BACK TO PORTFOLIO
+  </a>
+  <span class="aw-bar__brand">A-WAY</span>
+  <span class="aw-bar__pos mono">01 / 01</span>
+</header>
+
+<main id="main">
+
+  <!-- ============ 01 · HERO ============ -->
+  <section class="aw-hero" id="top">
+    <div class="wrap">
+      <p class="kicker reveal">01 · PRODUCT MANAGEMENT CASE STUDY</p>
+      <div class="aw-titlezone reveal" style="--d:.06s">
+        <h1 class="aw-title">A-WAY Consultancy</h1>
+        <div class="aw-stickies" aria-hidden="true">
+          <div class="sticky sticky--y hz-1" style="--r:3deg">STRATEGY<span class="sticky__tip">the thinking</span></div>
+          <div class="sticky sticky--b hz-2" style="--r:-4deg">CRM<span class="sticky__tip">the shape</span></div>
+          <div class="sticky sticky--g hz-3" style="--r:4deg">WORKFLOW<span class="sticky__tip">the heart of it</span></div>
+        </div>
+      </div>
+      <p class="aw-sub hand reveal" style="--d:.12s">Turning a study abroad brief into a real product</p>
+      <p class="aw-desc reveal" style="--d:.18s">I took a broad study abroad consultancy brief and worked backwards from the real problem: helping counsellors know which students need attention, what is blocking them, and what should happen next.</p>
+
+      <div class="aw-q reveal" style="--d:.24s">
+        <p class="aw-q__k hand">question I kept coming back to:</p>
+        <p class="aw-q__v hand">who needs my attention right now?</p>
+        <svg class="squiggle animsvg" viewBox="0 0 320 22" aria-hidden="true"><path pathLength="1" d="M6 12 C 60 3, 120 20, 180 10 S 290 6, 314 12"/></svg>
+      </div>
+
+      <dl class="aw-meta reveal" style="--d:.3s">
+        <div class="aw-meta__i"><dt>ROLE</dt><dd>Associate Product Manager</dd></div>
+        <div class="aw-meta__i"><dt>FOCUS</dt><dd>Product Strategy · CRM · Workflow</dd></div>
+        <div class="aw-meta__i"><dt>DOMAIN</dt><dd>Study Abroad / EdTech</dd></div>
+        <div class="aw-meta__i"><dt>STATUS</dt><dd>Concept / Product Definition</dd></div>
+      </dl>
+
+      <div class="aw-heronotes reveal" style="--d:.36s">
+        <span class="stamp">CONCEPT · NOT SHIPPED</span>
+        <span class="aw-briefnote hand">based on a supplied product brief →</span>
+      </div>
+    </div>
+    <a class="hero__scroll mono" href="#quick">KEEP READING<svg class="ic ic--dn" aria-hidden="true"><use href="#i-dn"/></svg></a>
+  </section>
+
+  <!-- ============ 02 · THE QUICK READ ============ -->
+  <section class="sec" id="quick">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">02 · THE QUICK READ</p>
+        <h2 class="sec-title">the whole thing,<br/>four cards</h2>
+      </header>
+      <div class="cs-cards cs-cards--4 reveal">
+        <div class="cs-card"><h4>Problem</h4><p>Counsellors manage students across multiple stages, documents, applications and follow-ups, but the workflow can become fragmented.</p></div>
+        <div class="cs-card a-pink"><h4>User</h4><p>Counsellors and operations teams who need a clear view of student progress and next actions.</p></div>
+        <div class="cs-card a-green"><h4>Product opportunity</h4><p>Create one operational view that turns student progress into clear next actions.</p></div>
+        <div class="cs-card a-blue"><h4>Product principle</h4><p>Don't make counsellors search for the next action. Make the next action obvious.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · BUSINESS CONTEXT ============ -->
+  <section class="sec sec--grid" id="context">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">03 · THE BUSINESS CONTEXT</p>
+        <h2 class="sec-title">one journey,<br/>five departments</h2>
+      </header>
+      <div class="cs-sec reveal">
+        <p>A study abroad consultancy isn't one process. It's nine stages of a student's life, worked by five different teams. The student experiences it as one continuous journey. The organisation experiences it as a series of handoffs.</p>
+        <p>That gap is where things slow down, and it's the reason a generic CRM never quite fixes it.</p>
+        <figure class="diagram">
+          <div class="figbox" data-fig="journeyDepts"></div>
+          <figcaption class="fig"><span>FIG. 01 · THE JOURNEY vs THE ORG CHART</span><em>conceptual reconstruction, from the brief</em></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · THE REAL PROBLEM ============ -->
+  <section class="sec" id="problem">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">04 · THE REAL PROBLEM</p>
+        <h2 class="sec-title">not "we need a CRM"</h2>
+      </header>
+      <div class="cs-sec reveal">
+        <ol class="aw-qs">
+          <li class="reveal">WHO NEEDS MY <span class="hl hl-y">ATTENTION</span>?</li>
+          <li class="reveal" style="--d:.08s">WHAT IS <span class="hl hl-p">BLOCKING</span> THEM?</li>
+          <li class="reveal" style="--d:.16s">WHAT SHOULD HAPPEN <span class="hl hl-b">NEXT</span>?</li>
+        </ol>
+        <p>The problem was not simply storing student information. The bigger problem was helping the team understand what matters now.</p>
+        <figure class="diagram">
+          <div class="figbox" data-fig="infoFlow"></div>
+          <figcaption class="fig"><span>FIG. 02 · FROM INFORMATION TO ACTION</span><em>the blue box is the whole product</em></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · WHO NEEDS THIS ============ -->
+  <section class="sec sec--grid" id="users">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">05 · THE USERS</p>
+        <h2 class="sec-title">who actually needs<br/>this product</h2>
+      </header>
+      <div class="reveal">
+        <div class="cs-roles">
+          <div class="cs-card cs-role cs-role--primary a-blue">
+            <span class="cs-role__tag">PRIMARY USER</span>
+            <h4>Counsellor</h4>
+            <p>Owns a portfolio of students and needs to understand who requires attention without manually checking every record.</p>
+          </div>
+          <div class="cs-card"><span class="cs-role__tag">SECONDARY</span><h4>Admissions</h4><p>Moves applications forward. Cares about completeness and deadlines.</p></div>
+          <div class="cs-card"><span class="cs-role__tag">SECONDARY</span><h4>Visa Team</h4><p>Owns the visa stage and its document-heavy workflow.</p></div>
+          <div class="cs-card"><span class="cs-role__tag">SECONDARY</span><h4>Finance</h4><p>Tracks fees, payments and refunds against the journey.</p></div>
+          <div class="cs-card"><span class="cs-role__tag">SECONDARY</span><h4>Admin</h4><p>Needs the pipeline view: volumes, productivity, drop-offs.</p></div>
+          <div class="cs-card"><span class="cs-role__tag">SECONDARY</span><h4>Operations</h4><p>Keeps the machine running day to day, across every stage.</p></div>
+        </div>
+        <p class="cs-note hand">the product is not trying to replace the team's workflow. it is trying to make the workflow visible →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · STUDENT JOURNEY (interactive) ============ -->
+  <section class="sec" id="journey">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">06 · THE STUDENT JOURNEY</p>
+        <h2 class="sec-title">nine stages,<br/>clickable</h2>
+        <p class="sec-sub">Click any stage to see what happens there, who owns it, and where it usually gets stuck.</p>
+      </header>
+      <div class="reveal">
+        <div class="aw-journey" id="awJourney" role="tablist" aria-label="Student journey stages"></div>
+        <div class="aw-jpanel" id="awJpanel" role="tabpanel" aria-live="polite"></div>
+        <p class="cs-note hand">working product assumptions, shaped from the brief · not validated findings</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · PRODUCT PRINCIPLE ============ -->
+  <section class="sec sec--grid" id="principle">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">07 · THE PRODUCT PRINCIPLE</p>
+        <h2 class="hand-title">the one rule<br/>I kept enforcing</h2>
+      </header>
+      <div class="reveal">
+        <blockquote class="cs-quote">Don't make counsellors search for the next action. Make the next action obvious.</blockquote>
+        <div class="prin">
+          <div class="prin__col">
+            <p class="prin__k">OLD THINKING</p>
+            <p class="prin__txt">"Here is all the student information."</p>
+          </div>
+          <svg class="prin__arr" viewBox="0 0 14 24" aria-hidden="true"><path d="M7 1 C 5 7 9 15 7 21 M2 16 l5 6 5 -6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="prin__col prin__col--after a-blue">
+            <p class="prin__k">BETTER PRODUCT THINKING</p>
+            <p class="prin__txt">"Here is what needs your attention."</p>
+          </div>
+        </div>
+        <p class="cs-note hand" style="text-align:center">less searching → more acting</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · MVP STRATEGY ============ -->
+  <section class="sec" id="mvp">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">08 · MVP STRATEGY</p>
+        <h2 class="sec-title">what I would<br/>build first</h2>
+        <p class="sec-sub">The MVP should not try to digitise the entire consultancy on day one. It should cover the spine everything else hangs on.</p>
+      </header>
+      <div class="cs-cards cs-cards--mvp reveal">
+        <div class="cs-card"><span class="cs-card__n mono">01</span><div><h4>Get the student</h4><p>Lead and student intake.</p></div></div>
+        <div class="cs-card"><span class="cs-card__n mono">02</span><div><h4>Understand the student</h4><p>Profile, journey stage and context.</p></div></div>
+        <div class="cs-card"><span class="cs-card__n mono">03</span><div><h4>Move the student forward</h4><p>Tasks, status, applications and next actions.</p></div></div>
+        <div class="cs-card"><span class="cs-card__n mono">04</span><div><h4>Know what is blocking them</h4><p>Documents, blockers, overdue actions, ownership.</p></div></div>
+      </div>
+      <figure class="diagram reveal">
+        <div class="figbox" data-fig="mvpChain"></div>
+        <figcaption class="fig"><span>FIG. 03 · THE MVP SPINE</span><em>everything else builds on this</em></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 09 · PRIORITISATION (interactive) ============ -->
+  <section class="sec sec--grid" id="matrix">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">09 · PRIORITISATION</p>
+        <h2 class="sec-title">where everything<br/>would sit</h2>
+        <p class="sec-sub"><span class="mg__tag" style="margin-right:10px">CONCEPTUAL PRIORITISATION</span>Illustrative reasoning from the brief, not an actual company decision.</p>
+      </header>
+      <div class="aw-mxwrap reveal">
+        <div class="aw-mx" id="awMx">
+          <span class="aw-mx__yl mono" aria-hidden="true">BUSINESS VALUE ↑</span>
+          <span class="aw-mx__xl mono" aria-hidden="true">USER VALUE →</span>
+        </div>
+        <aside class="aw-mxpanel" id="awMxPanel" aria-live="polite"></aside>
+      </div>
+      <p class="cs-note hand">filled blue dots = the MVP spine · outline dots = later → hover, tap or focus any dot</p>
+    </div>
+  </section>
+
+  <!-- ============ 10 · THE COUNSELLOR'S SCREEN ============ -->
+  <section class="sec" id="crm">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">10 · THE PRODUCT, CONCEPTUALLY</p>
+        <h2 class="sec-title">inside the<br/>counsellor's screen</h2>
+      </header>
+      <div class="cs-sec reveal">
+        <p>If the product does one thing, it opens to the answer, not to a list. This is the shape of that screen:</p>
+        <div class="aw-crm">
+          <div class="aw-crm__side" aria-label="Sidebar navigation (conceptual)">
+            <span class="on">DASHBOARD</span><span>STUDENTS</span><span>APPLICATIONS</span><span>TASKS</span><span>DOCUMENTS</span><span>REPORTS</span><span>SETTINGS</span>
+          </div>
+          <div class="aw-crm__main">
+            <div class="aw-crm__head">
+              <span class="mock__g">Good morning, Priya</span>
+              <span class="mock__pill">STUDENTS NEEDING ATTENTION</span>
+            </div>
+            <div class="aw-stats">
+              <div class="aw-stat"><b style="color:var(--red)">12</b><span>OVERDUE ACTIONS</span></div>
+              <div class="aw-stat"><b style="color:var(--amber)">8</b><span>DOCUMENTS MISSING</span></div>
+              <div class="aw-stat"><b style="color:var(--blue)">5</b><span>APPLICATIONS NEAR DEADLINE</span></div>
+              <div class="aw-stat"><b>3</b><span>STUDENTS WITHOUT NEXT ACTION</span></div>
+            </div>
+            <div class="aw-twrap">
+              <table class="aw-table">
+                <thead><tr><th>STUDENT</th><th>STAGE</th><th>BLOCKER</th><th>OWNER</th><th>NEXT ACTION</th></tr></thead>
+                <tbody>
+                  <tr><td>Aisha Khan</td><td>Application</td><td class="aw-td-red">Missing SOP</td><td>Priya</td><td class="aw-td-blue">Request SOP</td></tr>
+                  <tr><td>Rahul Menon</td><td>Visa</td><td class="aw-td-red">Appointment pending</td><td>Arun</td><td class="aw-td-blue">Follow up</td></tr>
+                  <tr><td>Neha Shah</td><td>Offer</td><td class="aw-td-red">Decision pending</td><td>Priya</td><td class="aw-td-blue">Call student</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <span class="mock__label">CONCEPTUAL PRODUCT INTERFACE · SAMPLE DATA, NOT REAL STUDENTS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · ONE STUDENT, ONE PAGE ============ -->
+  <section class="sec" id="student">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">11 · THE STUDENT RECORD</p>
+        <h2 class="sec-title">one student,<br/>one page</h2>
+      </header>
+      <div class="cs-sec reveal">
+        <div class="mock a-blue">
+          <div class="mock__bar"><span class="mock__g">Aisha Khan</span><span class="aw-status mono">APPLICATION</span></div>
+          <div class="mock__body mock__body--col">
+            <div class="aw-info">
+              <div class="mock__row"><b>University</b><span>University of Manchester</span></div>
+              <div class="mock__row"><b>Program</b><span>MSc Business Analytics</span></div>
+              <div class="mock__row"><b>Intake</b><span>Autumn 2026</span></div>
+              <div class="mock__row"><b>Counsellor</b><span>Priya</span></div>
+              <div class="mock__row"><b>Application deadline</b><span>30 April</span></div>
+              <div class="mock__row"><b>Current stage</b><span>Application</span></div>
+            </div>
+            <div>
+              <p class="mock__k">JOURNEY</p>
+              <div class="sjourney">
+                <span class="sj sj--done">✓ Lead</span><span class="sj sj--done">✓ Counselling</span><span class="sj sj--done">✓ Eligibility</span><span class="sj sj--done">✓ Shortlist</span><span class="sj sj--cur">● Application</span><span class="sj">○ Offer</span><span class="sj">○ Visa</span>
+              </div>
+            </div>
+            <div class="aw-duo">
+              <div class="aw-blocker">
+                <p class="aw-duo__k mono">CURRENT BLOCKER</p>
+                <p class="aw-duo__v">SOP document missing</p>
+              </div>
+              <div class="snext">
+                <p class="mono">NEXT ACTION</p>
+                <h5>Request updated SOP from student</h5>
+                <span class="btn-st">REQUEST SOP</span>
+              </div>
+            </div>
+          </div>
+          <span class="mock__label">CONCEPTUAL PRODUCT INTERFACE · SAMPLE DATA</span>
+        </div>
+        <p class="cs-note hand">the next action is the loudest thing on the page, on purpose →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · APPLICATION TRACKING ============ -->
+  <section class="sec sec--grid" id="apps">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">12 · APPLICATION TRACKING</p>
+        <h2 class="sec-title">one student,<br/>many applications</h2>
+        <p class="sec-sub">I treated each university application as its own object with its own state, instead of one more field on the student. That's the key structural decision in the whole design.</p>
+      </header>
+      <figure class="diagram reveal">
+        <div class="figbox" data-fig="appStates"></div>
+        <figcaption class="fig"><span>FIG. 04 · APPLICATION LIFECYCLE</span><em>each application, its own state</em></figcaption>
+      </figure>
+      <div class="reveal">
+        <div class="aw-fchips" id="awFchips" role="group" aria-label="Filter applications by status"></div>
+        <div class="apps" id="awApps"></div>
+        <p class="cs-note hand">in the full concept you'd also filter by deadline, counsellor and university → ( conceptual filter, sample data )</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · DOCUMENT MANAGEMENT ============ -->
+  <section class="sec" id="docs">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">13 · DOCUMENT MANAGEMENT</p>
+        <h2 class="sec-title">documents are<br/>the workflow</h2>
+        <p class="sec-sub">A file list answers "what do we have?". A checklist answers "what is still blocking this application?". Only one of those moves a student forward.</p>
+      </header>
+      <div class="reveal">
+        <div class="mock">
+          <div class="mock__bar"><span class="mock__g">Documents · Aisha Khan</span><span class="mono" style="font-size:.54rem;letter-spacing:.16em;color:var(--ink-soft)">BY CATEGORY</span></div>
+          <div class="mock__body mock__body--col">
+            <div class="aw-cats" id="awCats" role="group" aria-label="Filter documents by category"></div>
+            <div id="awDocs"></div>
+            <div class="aw-legend mono" aria-label="Status legend">
+              <span><i class="aw-st aw-st--ok"></i>VERIFIED</span>
+              <span><i class="aw-st aw-st--warn"></i>PENDING</span>
+              <span><i class="aw-st aw-st--miss"></i>MISSING</span>
+              <span><i class="aw-st aw-st--rej"></i>REJECTED</span>
+            </div>
+          </div>
+          <span class="mock__label">CONCEPTUAL PRODUCT INTERFACE · SAMPLE DATA</span>
+        </div>
+        <p class="cs-note hand">missing and rejected get louder than everything else, on purpose →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · THE STUDENT'S SCREEN ============ -->
+  <section class="sec sec--grid" id="studentview">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">14 · THE OTHER SIDE OF THE SCREEN</p>
+        <h2 class="sec-title">what the<br/>student sees</h2>
+      </header>
+      <div class="cs-sec reveal">
+        <div class="mock a-green">
+          <div class="mock__bar"><span class="mock__g">Hi Aisha 👋</span><span class="mock__pill" style="background:var(--green)">1 TASK NEEDS YOUR ATTENTION</span></div>
+          <div class="mock__body mock__body--col">
+            <p class="mock__k">HERE'S WHAT NEEDS YOUR ATTENTION.</p>
+            <div class="snext">
+              <p class="mono">YOUR NEXT STEP</p>
+              <h5>Upload your revised SOP</h5>
+              <p class="mono">DUE TOMORROW</p>
+              <span class="btn-st">UPLOAD SOP</span>
+            </div>
+            <div class="aw-prog">
+              <div class="aw-prog__n"><b>3</b><span>APPLICATIONS</span></div>
+              <div class="aw-prog__chips mono">
+                <span class="aw-st aw-st--ok">1 OFFER</span>
+                <span class="aw-st aw-st--pend">1 UNDER REVIEW</span>
+                <span class="aw-st aw-st--warn">1 DOCS PENDING</span>
+              </div>
+              <div class="aw-bar3" aria-hidden="true"><i style="background:var(--green)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i></div>
+            </div>
+          </div>
+          <span class="mock__label">CONCEPTUAL PRODUCT INTERFACE · SAMPLE DATA</span>
+        </div>
+        <blockquote class="cs-quote cs-quote--pink">The counsellor needs clarity. The student needs clarity too.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 15 · EDGE CASES ============ -->
+  <section class="sec" id="edges">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">15 · EDGE CASES</p>
+        <h2 class="hand-title">edge cases I would design for</h2>
+      </header>
+      <div class="reveal">
+        <details class="req req--edge">
+          <summary>01 · Multiple applications<span class="req__chev" aria-hidden="true">+</span></summary>
+          <div class="req__body"><p class="req__k">SITUATION</p><p>One student can have multiple universities, each with a different status.</p>
+          <p class="req__k">PRODUCT RESPONSE</p><p>Keep applications separate while keeping the student as the primary entity.</p></div>
+        </details>
+        <details class="req req--edge">
+          <summary>02 · Rejected document<span class="req__chev" aria-hidden="true">+</span></summary>
+          <div class="req__body"><p class="req__k">SITUATION</p><p>A document can be uploaded but still be unusable.</p>
+          <p class="req__k">PRODUCT RESPONSE</p><p>Show the reason, owner and next action instead of simply showing "Rejected."</p></div>
+        </details>
+        <details class="req req--edge">
+          <summary>03 · Counsellor ownership changes<span class="req__chev" aria-hidden="true">+</span></summary>
+          <div class="req__body"><p class="req__k">SITUATION</p><p>A student may move between counsellors.</p>
+          <p class="req__k">PRODUCT RESPONSE</p><p>Preserve history while making current ownership obvious.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16 · METRICS ============ -->
+  <section class="sec sec--grid" id="metrics">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">16 · METRICS</p>
+        <h2 class="sec-title">how I would know<br/>it is working</h2>
+        <p class="sec-sub"><span class="mg__tag">PROPOSED METRICS</span></p>
+      </header>
+      <div class="mgrid reveal">
+        <div class="mg"><h4>TIME TO FIRST ACTION</h4><ul><li>How quickly a counsellor can identify and act on a student needing attention.</li></ul></div>
+        <div class="mg"><h4>OVERDUE ACTION RATE</h4><ul><li>Percentage of student actions that remain overdue.</li></ul></div>
+        <div class="mg"><h4>DOCUMENT RESOLUTION TIME</h4><ul><li>Time from a document being rejected or missing to successfully verified.</li></ul></div>
+        <div class="mg"><h4>STUDENT PROGRESS RATE</h4><ul><li>Percentage of active students moving to their next stage within the expected timeframe.</li></ul></div>
+      </div>
+      <p class="cs-note hand">nothing here is a result · these are the numbers I'd want on the wall →</p>
+    </div>
+  </section>
+
+  <!-- ============ 17 · EXPERIMENT ============ -->
+  <section class="sec" id="experiment">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">17 · EXPERIMENT</p>
+        <h2 class="hand-title">one experiment I would run</h2>
+      </header>
+      <div class="reveal">
+        <div class="expcard">
+          <p class="expcard__k">HYPOTHESIS</p>
+          <p class="expcard__h">"If counsellors see a prioritised 'students needing attention' view instead of starting from the full student list, they will identify their next action faster."</p>
+          <div class="exp__cols">
+            <div><p class="req__k">CONTROL</p><p>All students</p></div>
+            <div><p class="req__k">VARIANT</p><p>Students needing attention</p></div>
+          </div>
+          <p class="req__k">MEASURE</p>
+          <ul class="req__ul req__ul--inline"><li>Time to first meaningful action</li></ul>
+          <p class="exp__note hand">proposed experiment · not a reported result</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 18 · ROADMAP ============ -->
+  <section class="sec sec--grid" id="roadmap">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">18 · ROADMAP</p>
+        <h2 class="sec-title">see · act · optimise</h2>
+      </header>
+      <div class="rmp reveal">
+        <div class="rmp__p a-blue"><span class="rmp__n">PHASE 01</span><h4>See</h4><ul><li>Student CRM</li><li>Student journey</li><li>Basic statuses</li><li>Ownership</li></ul></div>
+        <div class="rmp__p a-green"><span class="rmp__n">PHASE 02</span><h4>Act</h4><ul><li>Tasks</li><li>Next actions</li><li>Documents</li><li>Applications</li><li>Notifications</li></ul></div>
+        <div class="rmp__p a-amber"><span class="rmp__n">PHASE 03</span><h4>Optimise</h4><ul><li>Analytics</li><li>Automation</li><li>Insights</li><li>AI-assisted recommendations</li></ul></div>
+      </div>
+      <p class="cs-note hand" style="text-align:center">first make the work visible, then make it faster →</p>
+    </div>
+  </section>
+
+  <!-- ============ 19 · VALIDATION ============ -->
+  <section class="sec" id="validate">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">19 · NEXT</p>
+        <h2 class="hand-title">what I would validate next</h2>
+        <p class="sec-sub">Research questions, not established findings. The answers could reshape the MVP, and that would be product discovery doing its job.</p>
+      </header>
+      <div class="mgrid reveal">
+        <div class="mg"><h4>THE WORK</h4><ul class="vq"><li>Which student information do counsellors check most frequently?</li><li>How do counsellors currently decide who needs attention?</li><li>Which part of the workflow creates the most manual work?</li></ul></div>
+        <div class="mg"><h4>HANDOFFS &amp; OWNERSHIP</h4><ul class="vq"><li>Where do handoffs fail most often?</li><li>How often does ownership change?</li></ul></div>
+        <div class="mg"><h4>DOCUMENTS</h4><ul class="vq"><li>What makes a document "ready" for submission?</li></ul></div>
+        <div class="mg"><h4>MEASUREMENT</h4><ul class="vq"><li>How are overdue actions currently tracked?</li><li>Which metrics does leadership already use?</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 20 · FINAL THESIS ============ -->
+  <section class="sec aw-thesis-sec" id="thesis">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">20 · THE THESIS</p>
+      </header>
+      <div class="aw-thesis reveal">
+        <p class="aw-thesis__t">A-WAY should not become another place where counsellors store information.</p>
+        <p class="aw-thesis__t aw-thesis__t--blue">It should become the place where they understand what needs to happen next.</p>
+        <div class="flow aw-fto-flow" role="img" aria-label="From student information, to student progress, to clear next action">
+          <span class="aw-fto"><i>FROM</i><span class="fn">STUDENT INFORMATION</span></span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="aw-fto"><i>TO</i><span class="fn fn-amber">STUDENT PROGRESS</span></span>
+          <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+          <span class="aw-fto"><i>TO</i><span class="fn fn-blue">CLEAR NEXT ACTION</span></span>
+        </div>
+        <p class="aw-final hand">that's the product I would build first.</p>
+        <a class="btn btn--ink btn--big" id="backBig" href="../index.html">BACK TO PORTFOLIO <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MINI FOOTER ============ -->
+<footer class="aw-foot">
+  <div class="wrap">
+    <span class="mono">A-WAY CONSULTANCY · ASSOCIATE PRODUCT MANAGEMENT CASE STUDY</span>
+    <span class="mono">CONCEPT · BASED ON A SUPPLIED BRIEF · © <span id="year">2026</span> MALAVIKA</span>
+    <a class="aw-foot__top mono" href="#top">BACK TO TOP <svg class="ic ic--up" aria-hidden="true"><use href="#i-up"/></svg></a>
+  </div>
+</footer>
+
+<script src="away.js"></script>
+</body>
+</html>
