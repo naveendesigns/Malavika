@@ -19,7 +19,7 @@ const dirIcon=d=>`<svg class="ic ${d==='up'?'ic--up':''}" aria-hidden="true"><us
    ===================================================================== */
  $('#workGrid').innerHTML=PROJECTS.map((p,i)=>`
   <div class="pw pc-${p.treat} reveal" style="--d:${i*0.06}s">
-    <div class="tilt pcard a-${p.acc}" style="--r:${[-.7,.8,-.5,.6,-.6][i%5]}deg">
+    <div class="tilt pcard a-${p.acc}" data-case="${p.id}" role="button" tabindex="0" aria-label="Open case study: ${p.title}" style="--r:${[-.7,.8,-.5,.6,-.6][i%5]}deg">
       ${p.treat==='t1'?'<span class="tape tape--l" aria-hidden="true"></span><span class="tape tape--r" aria-hidden="true"></span>':''}
       ${p.treat==='t2'?'<span class="tab">CASE ${p.num}</span>':''}
       <div class="pcard__in">
