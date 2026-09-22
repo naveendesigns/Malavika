@@ -1,7 +1,7 @@
 /* =====================================================================
    RENDER — turns the data in js/data.js into HTML.
 
-   Main page: fills #workGrid, #impactPins, #proudGrid, #tkWrap, #xpList
+   Main page: fills #workGrid, #impactPins, #tkWrap, #xpList
    (and #pgList if the playground section is re-enabled).
    Case studies: secHTML() builds each case-study section from the
    block types described in js/data.js.
