@@ -191,16 +191,14 @@ const CASES={
     {k:'THE STUDENT SIDE',t:[
       "The employee interface is about managing complexity. The student interface is about reducing it: one next step at a time, no internal jargon."],
      mock:'student'},
-    {k:'EDGE CASES · REAL PRODUCTS LIVE HERE',t:["These shaped more design decisions than the happy path did:"],
+    {k:'EDGE CASES · THE QUESTIONS THAT CHANGE THE DESIGN',t:["A few cases shaped the product more than the happy path did:"],
      edges:[
-      {q:'What if a student applies to seven universities?',a:'Each application needs independent status and document requirements. One student, seven threads, no ambiguity.'},
-      {q:'What if the student changes counsellors?',a:'Ownership changes. History stays intact. The new counsellor shouldn\u2019t have to reintroduce themselves to the student\u2019s story.'},
-      {q:'What if a document is rejected?',a:'Show the rejection reason and the required next action, and generate the follow-up automatically.'},
-      {q:'What if a visa is rejected?',a:'The journey shouldn\u2019t simply disappear. It should transition into a new state: re-application, an alternative destination, or closure with context.'},
-      {q:'What if two teams update the student at once?',a:'Timeline and audit history make every change visible. No silent overwrites.'}]},
-    {k:'METRICS · LAUNCHING THE CRM ISN\u2019T THE OUTCOME',t:[
-      "I wouldn\u2019t measure success by how many people logged in. I\u2019d want to know whether the system actually helps students move forward. The primary metric I proposed: student progression, the percentage of active students progressing to their next journey stage within the expected timeframe.",
-      "Everything below is proposed. No performance numbers exist yet, and I wouldn\u2019t invent them."],
+      {q:'What if a student applies to seven universities?',a:'Each application gets its own status and document requirements. One student, multiple independent threads.'},
+      {q:'What if a document is rejected?',a:'Show the reason, surface the next action, and create the follow-up instead of leaving someone to remember it.'},
+      {q:'What if the student changes counsellors?',a:'Ownership changes. The history stays intact, so the new counsellor can pick up the story without starting over.'}]},
+    {k:'METRICS · HOW I WOULD MEASURE IT',t:[
+      "I would not measure success by logins or feature usage alone. I would start with student progression: are active students moving to their next journey stage within the expected timeframe?",
+      "These are proposed metrics for a concept, not reported outcomes."],
      metrics:[
       {g:'LEAD',items:['Lead to counselling conversion','Time to first follow-up','Follow-up completion rate']},
       {g:'APPLICATION',items:['Application completion rate','Average processing time','Document completion rate']},
