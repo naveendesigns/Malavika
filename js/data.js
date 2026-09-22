@@ -24,7 +24,7 @@ const INK='#22201B', SOFT='rgba(34,32,27,.62)', PAPER='#FFFDF6',
 const PROJECTS=[
   /* CASE 01: A-WAY. A product-definition concept, so no impact numbers,
      only an honest status. Everything else below is documented work. */
-  {id:'away',num:'01',treat:'t3',acc:'blue',
+  {id:'away',num:'01',treat:'t3',acc:'blue',href:'away/',
    title:'A-WAY Consultancy: Turning a study abroad brief into a real product',
    cat:'PRODUCT STRATEGY × PRODUCT DEFINITION · CONCEPT',
    desc:'I took a broad study abroad consultancy brief and worked backwards from the real problem: helping counsellors know which students need attention, what is blocking them, and what should happen next.',
