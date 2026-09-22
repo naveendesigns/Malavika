@@ -65,6 +65,21 @@ if(pol&&!reduced){
   },{passive:true});
 }
 
+/* ---------- project card interaction ---------- */
+$('#workGrid').addEventListener('click',e=>{
+  if(e.target.closest('.pcard__cta'))return;
+  const card=e.target.closest('.pcard[data-case]');
+  if(card)location.hash=card.dataset.case;
+});
+$('#workGrid').addEventListener('keydown',e=>{
+  const card=e.target.closest('.pcard[data-case]');
+  if(!card)return;
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    location.hash=card.dataset.case;
+  }
+});
+
 /* ---------- case study overlay (hash-routed: #away, #c1 through #c4) ---------- */
 const caseView=$('#caseView'),caseBody=$('#caseBody'),cvPos=$('#cvPos');
 let currentCase=null,lastFocus=null;
