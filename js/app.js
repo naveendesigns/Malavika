@@ -64,6 +64,19 @@ workGrid.addEventListener('click',e=>{
   if(!card)return;
 
   const id=card.dataset.case;
+  const project=PROJECTS.find(p=>p.id===id);
+  if(!project)return;
+
+  /* A-WAY is now a standalone page. Keep the whole card and its CTA
+     consistent, while the remaining projects keep the in-page overlay. */
+  if(project.href){
+    if(!e.target.closest('.pcard__cta')){
+      e.preventDefault();
+      location.href=project.href;
+    }
+    return;
+  }
+
   if(!CASES[id])return;
 
   /*
@@ -84,6 +97,11 @@ workGrid.addEventListener('keydown',e=>{
   if(e.key==='Enter'||e.key===' '){
     e.preventDefault();
     const id=card.dataset.case;
+    const project=PROJECTS.find(p=>p.id===id);
+    if(project?.href){
+      location.href=project.href;
+      return;
+    }
     if(CASES[id]){
       if(location.hash!==`#${id}`) location.hash=id;
       else openCase(id);
