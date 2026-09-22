@@ -69,7 +69,10 @@ if(pol&&!reduced){
 $('#workGrid').addEventListener('click',e=>{
   if(e.target.closest('.pcard__cta'))return;
   const card=e.target.closest('.pcard[data-case]');
-  if(card)location.hash=card.dataset.case;
+  if(card){
+    location.hash=card.dataset.case;
+    openCase(card.dataset.case);
+  }
 });
 $('#workGrid').addEventListener('keydown',e=>{
   const card=e.target.closest('.pcard[data-case]');
@@ -145,6 +148,7 @@ function handleHash(){
 }
 addEventListener('hashchange',handleHash);
 handleHash();
+addEventListener('pageshow',handleHash);
 
 /* re-render diagrams on orientation/size changes so labels stay readable */
 let rt;
