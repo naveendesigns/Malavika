@@ -7,10 +7,9 @@
    - the four "work I'm proud of" receipts       → PROUD
    - toolkit chips                               → TK
    - experience rows                             → XP
-   - full case-study pages (incl. A-WAY)         → CASES + ORDER
+   - full in-page case-study pages               → CASES + ORDER
 
-   To add a project: add an object to PROJECTS, a matching object in
-   CASES with the same "id", and add the id to ORDER. That's it.
+   Standalone projects can use href:'folder/' and do not need a CASES entry.
    ===================================================================== */
 
 /* shared colors used when drawing the SVG diagrams (keep in sync with css/main.css) */
@@ -30,25 +29,31 @@ const PROJECTS=[
    desc:'I took a broad study abroad consultancy brief and worked backwards from the real problem: helping counsellors know which students need attention, what is blocking them, and what should happen next.',
    metrics:null,
    note:'a product exercise in deciding what matters first'},
-  {id:'c1',num:'02',treat:'t1',acc:'blue',
+  {id:'tmcaf',num:'02',treat:'t1',acc:'pink',href:'tmcaf/',
+   title:'From dating feature to emotional support marketplace',
+   cat:'PRODUCT STRATEGY × MARKETPLACE · PM CAPSTONE',
+   desc:'A TrulyMadly capstone: scaling TM Caf into a moment-matched emotional support marketplace. Discovery, trust, monetization, retention, and the reasoning behind each trade-off.',
+   metrics:null,
+   note:'the timing is the lever project'},
+  {id:'c1',num:'03',treat:'t1',acc:'blue',
    title:'Reducing repeated claim issues',
    cat:'HEALTHCARE OPERATIONS × PROCESS IMPROVEMENT',
    desc:'Identifying claim-handling bottlenecks and working with cross-functional teams to improve the workflow.',
    metrics:[{n:'30%',d:'down',l:'repeated issues'},{n:'20%',d:'up',l:'resolution speed'}],
    note:'this one started with a bottleneck'},
-  {id:'c2',num:'03',treat:'t2',acc:'amber',
+  {id:'c2',num:'04',treat:'t2',acc:'amber',
    title:'Finding the pattern behind claim denials',
    cat:'DATA × ROOT-CAUSE ANALYSIS',
    desc:'Using operational data and root-cause analysis to improve denial identification and resolution.',
    metrics:[{n:'18%',d:'down',l:'claim backlog'},{n:'15%',d:'up',l:'first-pass resolution'}],
    note:'patterns hiding in plain sight'},
-  {id:'c3',num:'04',treat:'t4',acc:'green',
+  {id:'c3',num:'05',treat:'t4',acc:'green',
    title:'Making workflow tracking clearer',
    cat:'WORKFLOW × CROSS-FUNCTIONAL COLLABORATION',
    desc:'Using cross-team feedback to identify workflow inefficiencies and support better tracking.',
    metrics:[{n:'20%',d:'down',l:'operational friction'}],
    note:'the fix lived between teams'},
-  {id:'c4',num:'05',treat:'t1',acc:'pink',
+  {id:'c4',num:'06',treat:'t1',acc:'pink',
    title:'Understanding the customer before fixing the process',
    cat:'CUSTOMER EXPERIENCE × OPERATIONS',
    desc:'Mapping customer pain points during onboarding and using those insights to improve operational workflows.',
