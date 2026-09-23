@@ -13,11 +13,6 @@ function observeAll(root){
 }
 observeAll(document);
 
-const polaroidReveal=setTimeout(()=>{
-  const pol=$('#polaroidWrap');
-  if(pol) pol.classList.add('in');
-},2000);
-
 const nav=$('#nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
 
