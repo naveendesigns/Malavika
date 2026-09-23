@@ -7,9 +7,16 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 
 function observeAll(root){
-  (root||document).querySelectorAll('.reveal, .animsvg').forEach(el=>io.observe(el));
+  (root||document).querySelectorAll('.reveal, .animsvg').forEach(el=>{
+    if(el.id!=='polaroidWrap') io.observe(el);
+  });
 }
 observeAll(document);
+
+const polaroidReveal=setTimeout(()=>{
+  const pol=$('#polaroidWrap');
+  if(pol) pol.classList.add('in');
+},2000);
 
 const nav=$('#nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
