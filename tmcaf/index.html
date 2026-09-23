@@ -1,0 +1,589 @@
+x<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TM Caf · From Dating Feature to India's Emotional Support Marketplace · Malavika</title>
+<meta name="description" content="TM Caf: a product strategy capstone for TrulyMadly. Scaling the emotional support layer into a moment-matched marketplace: discovery, trust, monetization and retention."/>
+<meta name="theme-color" content="#F6F0E1"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="tmcaf.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- shared SVG defs: sketchy filters + hand-drawn icons (same as portfolio) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+    </filter>
+    <filter id="rough2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+    </filter>
+    <symbol id="i-arr" viewBox="0 0 24 14"><path d="M1 7 C 7 5 15 9 21 7 M16 2 l6 5 -6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-dn" viewBox="0 0 14 24"><path d="M7 1 C 5 7 9 15 7 21 M2 16 l5 6 5 -6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 14 24"><path d="M7 23 C 5 17 9 9 7 3 M2 8 l5 -6 5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="binder-holes" aria-hidden="true"><span></span><span></span><span></span></div>
+<a class="skip" href="#main">skip to content</a>
+
+<!-- ============ STICKY CASE STUDY BAR ============ -->
+<header class="cs-bar" id="csBar">
+  <span class="cs-bar__tape cs-bar__tape--l" aria-hidden="true"></span>
+  <span class="cs-bar__tape cs-bar__tape--r" aria-hidden="true"></span>
+  <a class="cs-bar__back" id="backLink" href="../index.html">
+    <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg> BACK TO PORTFOLIO
+  </a>
+  <span class="cs-bar__brand">TM CAF</span>
+  <span class="cs-bar__pos mono">TRULYMADLY · PM CAPSTONE</span>
+</header>
+
+<!-- ============ CASE SECTION NAV (sticky, horizontal scroll on mobile) ============ -->
+<nav class="cs-nav" id="csNav" aria-label="Case study sections">
+  <a href="#overview">OVERVIEW</a>
+  <a href="#market">MARKET</a>
+  <a href="#problem">PROBLEM</a>
+  <a href="#funnel">FUNNEL</a>
+  <a href="#research">RESEARCH</a>
+  <a href="#solutions">SOLUTIONS</a>
+  <a href="#business">BUSINESS</a>
+  <a href="#metrics">METRICS</a>
+  <a href="#roadmap">ROADMAP</a>
+  <a href="#thesis">THESIS</a>
+</nav>
+
+<main id="main">
+
+  <!-- ============ 01 · HERO ============ -->
+  <section class="cs-hero-sec" id="top">
+    <div class="wrap">
+      <p class="kicker reveal">01 · PRODUCT STRATEGY CASE STUDY</p>
+      <div class="tm-titlezone reveal" style="--d:.06s">
+        <h1 class="tm-title">TM Caf</h1>
+        <div class="tm-stickies" aria-hidden="true">
+          <div class="sticky sticky--p hz-1" style="--r:3deg">STRATEGY<span class="sticky__tip">the framing</span></div>
+          <div class="sticky sticky--y hz-2" style="--r:-4deg">MARKETPLACE<span class="sticky__tip">two sides to fix</span></div>
+          <div class="sticky sticky--b hz-3" style="--r:4deg">RETENTION<span class="sticky__tip">the real lever</span></div>
+        </div>
+      </div>
+      <p class="tm-sub hand reveal" style="--d:.12s">From dating feature to India's emotional support marketplace</p>
+      <p class="tm-desc reveal" style="--d:.18s">A product strategy to scale TrulyMadly's emotional support layer into a high-trust revenue engine.</p>
+
+      <div class="tm-q reveal" style="--d:.24s">
+        <p class="tm-q__k hand">the tension I kept circling:</p>
+        <p class="tm-q__v hand">TrulyMadly already owns the emotional moments in dating. TM Caf is under-discovered, under-matched and under-monetized.</p>
+        <svg class="squiggle animsvg" viewBox="0 0 320 22" aria-hidden="true"><path pathLength="1" d="M6 12 C 60 3, 120 20, 180 10 S 290 6, 314 12"/></svg>
+      </div>
+
+      <dl class="tm-meta reveal" style="--d:.3s">
+        <div class="tm-meta__i"><dt>ROLE</dt><dd>Product Strategy / Product Management</dd></div>
+        <div class="tm-meta__i"><dt>PROJECT TYPE</dt><dd>PM Capstone</dd></div>
+        <div class="tm-meta__i"><dt>COMPANY</dt><dd>TrulyMadly</dd></div>
+        <div class="tm-meta__i"><dt>FOCUS</dt><dd>Marketplace · Emotional Support · Monetization · Retention</dd></div>
+      </dl>
+
+      <div class="tm-heronotes reveal" style="--d:.36s">
+        <span class="stamp">STRATEGY PROPOSAL · NOT SHIPPED</span>
+        <span class="tm-briefnote hand">numbers from the capstone analysis · targets, not results →</span>
+      </div>
+    </div>
+    <a class="hero__scroll mono" href="#overview">KEEP READING<svg class="ic ic--dn" aria-hidden="true"><use href="#i-dn"/></svg></a>
+  </section>
+
+  <!-- ============ 02 · EXECUTIVE SUMMARY ============ -->
+  <section class="sec" id="overview">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">02 · EXECUTIVE SUMMARY</p>
+        <h2 class="sec-title">the opportunity</h2>
+      </header>
+      <div class="cs-cards cs-cards--4 reveal">
+        <div class="cs-card a-green"><h4>Strong market-fit potential</h4>
+          <p>Users may pay for anonymity, emotional relief, culturally safe advice, and simply: someone to talk to.</p></div>
+        <div class="cs-card a-red"><h4>Current product failures</h4>
+          <p>The biggest issues are discovery, moment matching and expert trust. The need exists; the delivery doesn't.</p></div>
+        <div class="cs-card a-blue"><h4>Strategic direction</h4>
+          <p>Embed TM Caf directly into the dating journey instead of keeping it as a hidden destination.</p></div>
+        <div class="cs-card a-pink"><h4>North Star</h4>
+          <p>Increase Monthly Paying Caf Users from <strong>2% to 15% of MAU</strong>. <span class="mg__tag">TARGET</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · MARKET OPPORTUNITY ============ -->
+  <section class="sec sec--grid" id="market">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">03 · MARKET OPPORTUNITY</p>
+        <h2 class="sec-title">why TM Caf,<br/>why now?</h2>
+      </header>
+      <div class="tm-bignums reveal">
+        <div class="tm-bignum"><span class="n">12M</span><span class="l">Registered Users</span></div>
+        <div class="tm-bignum"><span class="n">54%</span><span class="l">Tier 2/3 New Users</span></div>
+        <div class="tm-bignum"><span class="n">₹3B+</span><span class="l">Addressable Emotional Support Market</span></div>
+        <div class="tm-bignum"><span class="n">2 → 15%</span><span class="l">Paying Caf Users Target <i class="mg__tag">TARGET</i></span></div>
+      </div>
+      <blockquote class="cs-quote reveal">Users are not just paying for dating advice. They may be paying for emotional support, anonymity, and someone to talk to.</blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 04 · THE PROBLEM ============ -->
+  <section class="sec" id="problem">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">04 · THE PROBLEM</p>
+        <h2 class="sec-title">not a need problem.<br/>a delivery problem.</h2>
+      </header>
+      <div class="cs-cards reveal">
+        <div class="cs-card a-blue"><span class="cs-card__n mono">01</span><h4>Discovery barrier</h4><p>Most users don't know TM Caf exists. It's buried under the dating interface.</p></div>
+        <div class="cs-card a-amber"><span class="cs-card__n mono">02</span><h4>Moment-match barrier</h4><p>Users aren't routed into Caf at the emotional moment when support is most relevant.</p></div>
+        <div class="cs-card a-pink"><span class="cs-card__n mono">03</span><h4>Supply-trust barrier</h4><p>Users can't quickly decide which expert is right for them.</p></div>
+        <div class="cs-card a-red"><span class="cs-card__n mono">04</span><h4>Monetization risk</h4><p>Poor packaging could cause Caf to cannibalize existing dating subscriptions.</p></div>
+      </div>
+      <p class="tm-keyline reveal">The opportunity is not to create a new need. It is to connect an existing need with the right product experience.</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 · FUNNEL ============ -->
+  <section class="sec sec--grid" id="funnel">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">05 · FUNNEL ANALYSIS</p>
+        <h2 class="sec-title">where users<br/>drop off</h2>
+        <p class="sec-sub"><span class="mg__tag">SOURCE ANALYSIS</span> Funnel estimates from the capstone deck. Bar widths compressed for readability.</p>
+      </header>
+      <div class="tm-funnel reveal" role="img" aria-label="Funnel from 100 percent monthly active users down to 0.06 percent repeat users">
+        <div class="tm-frow">
+          <span class="tm-fbar" style="--w:100%"><b>100%</b><i>Total MAU</i></span>
+          <span class="tm-fn mono">12,000,000</span>
+        </div>
+        <div class="tm-frow">
+          <span class="tm-fbar" style="--w:56%"><b>20%</b><i>Caf-aware users</i></span>
+          <span class="tm-fn mono">2,400,000</span>
+          <span class="tm-fwhy hand">80% unaware → buried navigation</span>
+        </div>
+        <div class="tm-frow">
+          <span class="tm-fbar" style="--w:36%"><b>4%</b><i>Caf opens</i></span>
+          <span class="tm-fn mono">480,000</span>
+          <span class="tm-fwhy hand">trigger moment not captured → emotional intent missed</span>
+        </div>
+        <div class="tm-frow">
+          <span class="tm-fbar" style="--w:24%"><b>1.2%</b><i>Profile views</i></span>
+          <span class="tm-fn mono">144,000</span>
+          <span class="tm-fwhy hand">price uncertainty → blocks conversion</span>
+        </div>
+        <div class="tm-frow">
+          <span class="tm-fbar" style="--w:14%"><b>0.2%</b><i>First paid call</i></span>
+          <span class="tm-fn mono">24,000</span>
+          <span class="tm-fwhy hand">0.5% browse-to-call → weak marketplace conversion</span>
+        </div>
+        <div class="tm-frow">
+          <span class="tm-fbar tm-fbar--last" style="--w:8%"><b>0.06%</b><i>Repeat user</i></span>
+          <span class="tm-fn mono">7,200</span>
+          <span class="tm-fwhy hand">70% drop after first call → retention problem</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · RESEARCH INSIGHTS ============ -->
+  <section class="sec" id="research">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">06 · RESEARCH INSIGHTS</p>
+        <h2 class="sec-title">the need is emotional,<br/>not just functional</h2>
+      </header>
+      <div class="mgrid reveal">
+        <div class="mg"><h4>EMOTIONAL SEGMENTS</h4>
+          <ul class="vq"><li>Newly rejected</li><li>Post-breakup recovery</li><li>Chronic loneliness</li><li>Arranged-marriage confused</li><li>Pre-date anxiety</li></ul></div>
+        <div class="mg"><h4>HIGH-INTENT TRIGGERS</h4>
+          <ul class="vq"><li>Unmatch</li><li>Ghosting</li><li>Breakup aftermath</li><li>Bad date</li><li>Sunday loneliness</li><li>Festival loneliness</li></ul></div>
+        <div class="mg"><h4>WHY USERS MAY PAY</h4>
+          <ul class="vq"><li>Anonymity assured</li><li>No social judgment</li><li>Domain expertise</li><li>Culturally safe advice</li></ul></div>
+      </div>
+      <p class="cs-note hand">these are the moments the product should be present for →</p>
+    </div>
+  </section>
+
+  <!-- ============ 07 · PERSONAS ============ -->
+  <section class="sec sec--grid" id="personas">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">07 · USER PERSONAS</p>
+        <h2 class="sec-title">four emotional<br/>contexts</h2>
+        <p class="sec-sub">Behavioral contexts, not demographic buckets. The state the user is in matters more than who they are.</p>
+      </header>
+      <div class="cs-cards cs-cards--persona reveal">
+        <div class="cs-card a-pink">
+          <span class="cs-card__n mono">01</span><h4>Post-Breakup Healer</h4>
+          <dl class="tm-pf"><dt>STATE</dt><dd>Raw, vulnerable, seeking closure</dd><dt>TRIGGER</dt><dd>Breakup or ghosting</dd><dt>GOAL</dt><dd>Process emotions without judgment</dd><dt>CAF OPPORTUNITY</dt><dd>Listener or coach at peak emotional need</dd></dl>
+        </div>
+        <div class="cs-card a-blue">
+          <span class="cs-card__n mono">02</span><h4>Chronic Lonely User</h4>
+          <dl class="tm-pf"><dt>STATE</dt><dd>Persistent isolation, craves warmth</dd><dt>TRIGGER</dt><dd>Sunday evening / festival season</dd><dt>GOAL</dt><dd>Feel heard and less alone</dd><dt>CAF OPPORTUNITY</dt><dd>Ongoing listener relationship</dd></dl>
+        </div>
+        <div class="cs-card a-green">
+          <span class="cs-card__n mono">03</span><h4>Pre-Date Prepper</h4>
+          <dl class="tm-pf"><dt>STATE</dt><dd>Nervous, needs confidence</dd><dt>TRIGGER</dt><dd>Upcoming first date</dd><dt>GOAL</dt><dd>Feel prepared</dd><dt>CAF OPPORTUNITY</dt><dd>Short, focused coaching session</dd></dl>
+        </div>
+        <div class="cs-card a-amber">
+          <span class="cs-card__n mono">04</span><h4>Relationship Overthinker</h4>
+          <dl class="tm-pf"><dt>STATE</dt><dd>Confused about arranged marriage</dd><dt>TRIGGER</dt><dd>Receiving or evaluating a match</dd><dt>GOAL</dt><dd>Cultural guidance and perspective</dd><dt>CAF OPPORTUNITY</dt><dd>Astrologer or coach in native language</dd></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · SUPPLY INSIGHTS ============ -->
+  <section class="sec" id="supply">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">08 · SUPPLY-SIDE INSIGHTS</p>
+        <h2 class="sec-title">the quality exists.<br/>it isn't surfaced.</h2>
+      </header>
+      <div class="tm-dist reveal">
+        <div class="tm-dist__row">
+          <span class="tm-dist__k mono">STAR EXPERTS</span>
+          <div class="tm-dist__bar"><i style="--w:70%"></i></div>
+          <span class="tm-dist__v">10–20% of experts · 60–70% of sessions</span>
+        </div>
+        <div class="tm-dist__row">
+          <span class="tm-dist__k mono">MID-TIER</span>
+          <div class="tm-dist__bar"><i style="--w:25%"></i></div>
+          <span class="tm-dist__v">30% of experts · 25% of sessions</span>
+        </div>
+        <div class="tm-dist__row">
+          <span class="tm-dist__k mono">LONG-TAIL</span>
+          <div class="tm-dist__bar"><i style="--w:13%"></i></div>
+          <span class="tm-dist__v">50–60% of experts · 10–15% of sessions</span>
+        </div>
+      </div>
+      <div class="cs-cards reveal">
+        <div class="cs-card"><h4>Quality drivers</h4><p>Fast response time · language match · high empathy · complete profiles · specialization tags.</p></div>
+        <div class="cs-card a-green"><h4>The insight</h4><p>Quality exists. The product needs to make that quality easier to discover and trust.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · SOLUTION SPACE ============ -->
+  <section class="sec sec--grid" id="solutions">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">09 · SOLUTION SPACE</p>
+        <h2 class="sec-title">from problems to<br/>product opportunities</h2>
+        <p class="sec-sub">The full universe first, then the hard part: choosing what to build first.</p>
+      </header>
+      <div class="tm-universe reveal">
+        <div class="tm-uni a-blue"><h4>Discovery &amp; activation</h4><ul><li>Caf tile on feed</li><li>Caf onboarding tour</li><li>Push notifications</li></ul></div>
+        <div class="tm-uni a-pink"><h4>Moment-matched entry</h4><ul><li>Post-unmatch modal</li><li>Swipe-failure prompt</li><li>Festival nudge</li></ul></div>
+        <div class="tm-uni a-amber"><h4>Pricing innovation</h4><ul><li>5-minute free trial</li><li>Tiered per-minute rates</li><li>Session bundles</li></ul></div>
+        <div class="tm-uni a-green"><h4>Supply trust</h4><ul><li>Verified badges</li><li>Intro videos</li><li>Real-time availability</li></ul></div>
+        <div class="tm-uni a-red"><h4>AI-assisted layer</h4><ul><li>Smart expert matching</li><li>Session topic tags</li><li>Post-call nudges</li></ul></div>
+      </div>
+      <p class="cs-note hand">five directions, one funnel to fix →</p>
+    </div>
+  </section>
+
+  <!-- ============ 10 · PRIORITIZATION ============ -->
+  <section class="sec" id="rice">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">10 · PRIORITIZATION</p>
+        <h2 class="sec-title">not everything needed<br/>to be built first</h2>
+        <p class="sec-sub">RICE = Reach × Impact × Confidence / Effort. The formula matters less than what it forced us to admit.</p>
+      </header>
+      <div class="tm-rice reveal">
+        <div class="tm-rice__row"><span class="tm-rice__k">Caf tile on feed</span><div class="tm-rice__bar"><i style="--w:100%"></i></div><span class="tm-rice__n">324</span></div>
+        <div class="tm-rice__row"><span class="tm-rice__k">Post-unmatch entry</span><div class="tm-rice__bar"><i style="--w:52%"></i></div><span class="tm-rice__n">168</span></div>
+        <div class="tm-rice__row"><span class="tm-rice__k">Free 5-min trial</span><div class="tm-rice__bar"><i style="--w:30%"></i></div><span class="tm-rice__n">98</span></div>
+        <div class="tm-rice__row"><span class="tm-rice__k">Expert intro videos</span><div class="tm-rice__bar"><i style="--w:30%"></i></div><span class="tm-rice__n">96</span></div>
+        <div class="tm-rice__row"><span class="tm-rice__k">AI matching engine</span><div class="tm-rice__bar"><i style="--w:16%"></i></div><span class="tm-rice__n">51</span></div>
+      </div>
+      <p class="tm-keyline reveal">The first opportunities focused on fixing discovery and moment relevance before introducing more sophisticated AI capabilities.</p>
+      <p class="cs-note hand">prioritization before execution →</p>
+    </div>
+  </section>
+
+  <!-- ============ 11 · SOLUTION 01 ============ -->
+  <section class="sec sec--grid" id="solution1">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">11 · SOLUTION 01</p>
+        <h2 class="sec-title">put Caf where<br/>users already are</h2>
+        <p class="sec-sub hand" style="font-family:var(--hand);font-weight:600;font-size:1.4rem;color:var(--ink-soft)">Caf tile on the suggested feed</p>
+      </header>
+      <div class="tm-solgrid reveal">
+        <div class="tm-phone" aria-hidden="true">
+          <div class="tm-phone__frame">
+            <div class="tm-phone__notch"></div>
+            <div class="tm-phone__feed">
+              <div class="tm-feedcard"></div>
+              <div class="tm-feedcard"></div>
+              <div class="tm-caftile">
+                <b>TM CAF</b>
+                <p>"Feeling low? Talk to a relationship coach."</p>
+                <span class="tm-caftile__cta">TALK NOW →</span>
+              </div>
+              <div class="tm-feedcard"></div>
+            </div>
+          </div>
+          <span class="mock__label" style="position:static;border-top:1.5px dashed rgba(34,32,27,.2)">CONCEPTUAL PRODUCT INTERFACE</span>
+        </div>
+        <div class="cs-sec">
+          <p>After prolonged no-match behavior or failed swipes, users may experience frustration. Instead of asking them to discover Caf elsewhere, a subtle contextual tile appears inside the dating feed, between profiles.</p>
+          <dl class="tm-why">
+            <div><dt>TRIGGER</dt><dd>Prolonged no-match behavior / failed swipes</dd></div>
+            <div><dt>EXPERIENCE</dt><dd>Subtle Caf tile between profiles</dd></div>
+            <div><dt>WHY IT MATTERS</dt><dd>Removes the discovery barrier</dd></div>
+            <div><dt>EXPECTED IMPACT</dt><dd>Improves awareness and creates an entry into Caf</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · SOLUTION 02 ============ -->
+  <section class="sec" id="solution2">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">12 · SOLUTION 02</p>
+        <h2 class="sec-title">meet the user at the<br/>moment of rejection</h2>
+        <p class="sec-sub hand" style="font-family:var(--hand);font-weight:600;font-size:1.4rem;color:var(--ink-soft)">Post-unmatch entry point</p>
+      </header>
+      <div class="tm-solgrid reveal">
+        <div class="tm-phone" aria-hidden="true">
+          <div class="tm-phone__frame">
+            <div class="tm-phone__notch"></div>
+            <div class="tm-phone__modalwrap">
+              <div class="tm-modal">
+                <p class="tm-modal__t">That was tough.</p>
+                <p class="tm-modal__s">Talk to someone who gets it</p>
+                <div class="tm-modal__btns"><span class="tm-modal__btn tm-modal__btn--ink">COACH</span><span class="tm-modal__btn">LISTENER</span></div>
+                <p class="tm-modal__skip">Skip for now</p>
+              </div>
+            </div>
+          </div>
+          <span class="mock__label" style="position:static;border-top:1.5px dashed rgba(34,32,27,.2)">CONCEPTUAL PRODUCT INTERFACE</span>
+        </div>
+        <div class="cs-sec">
+          <p>The emphasis is on contextual intervention, not aggressive monetization. Immediately after an unmatch, an empathetic modal offers support while the emotional intent is at its peak.</p>
+          <dl class="tm-why">
+            <div><dt>TRIGGER</dt><dd>Immediately after an unmatch</dd></div>
+            <div><dt>UX FLOW</dt><dd>Empathetic contextual modal</dd></div>
+            <div><dt>WHY IT WORKS</dt><dd>Captures a high-intent emotional moment</dd></div>
+            <div><dt>EXPECTED IMPACT</dt><dd>Creates a natural entry into paid support</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · END-TO-END EXPERIENCE ============ -->
+  <section class="sec sec--grid" id="journey">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">13 · END-TO-END EXPERIENCE</p>
+        <h2 class="sec-title">from emotional trigger<br/>to repeat relationship</h2>
+      </header>
+      <figure class="diagram reveal">
+        <div class="figbox" data-fig="journeyChain"></div>
+        <figcaption class="fig"><span>FIG. 01 · THE CAF JOURNEY</span><em>six steps, one loop at the end</em></figcaption>
+      </figure>
+      <div class="cs-cards reveal">
+        <div class="cs-card"><h4>UX principles</h4><p>Moment-matched discovery · verified experts + ratings · clear pricing upfront · Hindi / regional language · frictionless UPI.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · TRUST DESIGN ============ -->
+  <section class="sec" id="trust">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">14 · MARKETPLACE &amp; TRUST DESIGN</p>
+        <h2 class="sec-title">trust is the<br/>conversion lever</h2>
+        <p class="sec-sub">Discovery alone isn't enough. Every user arrives with one silent question: why should I trust this person?</p>
+      </header>
+      <div class="cs-cards reveal">
+        <div class="cs-card a-green"><h4>Verified badges</h4><p>Background checks and credential reviews.</p></div>
+        <div class="cs-card a-pink"><h4>Specialization tags</h4><p>Breakup · loneliness · dating anxiety.</p></div>
+        <div class="cs-card a-blue"><h4>Real-time availability</h4><p>Available now vs scheduled call.</p></div>
+        <div class="cs-card a-amber"><h4>Language matching</h4><p>Hindi, Tamil, Telugu, Bengali, Marathi.</p></div>
+        <div class="cs-card"><h4>Intro videos</h4><p>30-second expert introduction.</p></div>
+        <div class="cs-card"><h4>24/7 coverage</h4><p>Availability across the day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 15 · MONETIZATION ============ -->
+  <section class="sec sec--grid" id="money">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">15 · MONETIZATION</p>
+        <h2 class="sec-title">a low-friction<br/>monetization ladder</h2>
+      </header>
+      <figure class="diagram reveal">
+        <div class="figbox" data-fig="moneyLadder"></div>
+        <figcaption class="fig"><span>FIG. 02 · THE LADDER</span><em>each step earns the next</em></figcaption>
+      </figure>
+      <div class="cs-cards reveal">
+        <div class="cs-card a-amber"><h4>Tier 2/3 pricing</h4><p>₹2–₹3 / min</p></div>
+        <div class="cs-card a-pink"><h4>Premium pricing</h4><p>₹8–₹12 / min</p></div>
+        <div class="cs-card a-blue"><h4>The guardrail</h4><p>TM Caf should create incremental value rather than replace existing dating subscriptions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16 · RETENTION LOOP ============ -->
+  <section class="sec" id="retention">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">16 · RETENTION</p>
+        <h2 class="sec-title">the real lever<br/>is continuity</h2>
+        <blockquote class="cs-quote">Continuity with a trusted expert is the main retention lever. Not features, not pricing.</blockquote>
+      </header>
+      <figure class="diagram reveal">
+        <div class="figbox tm-loopwrap" data-fig="retentionLoop"></div>
+        <figcaption class="fig"><span>FIG. 03 · THE RETENTION LOOP</span><em>conceptual · the loop feeds the dating product back</em></figcaption>
+      </figure>
+      <p class="tm-loop-mob hand" aria-hidden="true">( dating trigger → caf entry → first session → expert continuity → wallet recharge → repeat session → TM retention → and back around )</p>
+      <div class="tm-bignums reveal">
+        <div class="tm-bignum"><span class="n">3×</span><span class="l">Higher LTV vs one-session users</span></div>
+        <div class="tm-bignum"><span class="n">68%</span><span class="l">Repeat session rate with same expert</span></div>
+        <div class="tm-bignum"><span class="n">5 → 30%</span><span class="l">Revenue-share target, Caf of TM total <i class="mg__tag">TARGET</i></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 17 · KPI FRAMEWORK ============ -->
+  <section class="sec sec--grid" id="metrics">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">17 · KPI FRAMEWORK</p>
+        <h2 class="sec-title">how success<br/>would be measured</h2>
+      </header>
+      <div class="tm-north reveal">
+        <span class="tm-north__k mono">NORTH STAR <i class="mg__tag">TARGET</i></span>
+        <span class="tm-north__v">MONTHLY PAYING CAF USERS</span>
+        <span class="tm-north__n">2% → 15% <i>of MAU</i></span>
+        <span class="tm-north__sub">CAF REVENUE / MAU · ₹4 → ₹28 <i class="mg__tag">TARGET</i></span>
+      </div>
+      <div class="mgrid reveal">
+        <div class="mg"><h4>FUNNEL TARGETS</h4>
+          <ul><li>Trigger → tile view · <b>12%</b></li><li>Tile → browse · <b>35%</b></li><li>Profile → call · <b>8%</b></li><li>1st → 2nd call · <b>30%</b></li><li>Wallet recharge · <b>25%</b></li></ul></div>
+        <div class="mg"><h4>SUPPLY HEALTH</h4>
+          <ul><li>Active experts · <b>70–115</b></li><li>Average rating · <b>4.5+</b></li><li>Expert churn / quarter · <b>&lt;15%</b></li><li>24/7 coverage target · <b>100%</b></li></ul></div>
+      </div>
+      <p class="cs-note hand">every proposal in this case study maps to something countable →</p>
+    </div>
+  </section>
+
+  <!-- ============ 18 · RISKS ============ -->
+  <section class="sec" id="risks">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">18 · RISKS &amp; GUARDRAILS</p>
+        <h2 class="sec-title">scaling emotional support<br/>needs strong guardrails</h2>
+      </header>
+      <div class="tm-risks reveal">
+        <div class="tm-risk"><span class="tm-risk__r">Subscription cannibalization</span><svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg><span class="tm-risk__m">Caf+ add-on rather than replacement</span></div>
+        <div class="tm-risk"><span class="tm-risk__r">Supply quality degradation</span><svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg><span class="tm-risk__m">Quarterly vetting + rating gates</span></div>
+        <div class="tm-risk"><span class="tm-risk__r">Misuse / escort behavior</span><svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg><span class="tm-risk__m">AI moderation + behavioral flagging + ToS</span></div>
+        <div class="tm-risk"><span class="tm-risk__r">Expert burnout</span><svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg><span class="tm-risk__m">Session caps + wellness check-ins</span></div>
+        <div class="tm-risk"><span class="tm-risk__r">Regulatory / privacy risk</span><svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg><span class="tm-risk__m">DPDP Act compliance + E2E encryption</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 19 · ROADMAP ============ -->
+  <section class="sec sec--grid" id="roadmap">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">19 · ROADMAP</p>
+        <h2 class="sec-title">from discovery fixes<br/>to AI-powered retention</h2>
+      </header>
+      <div class="rmp reveal">
+        <div class="rmp__p a-blue"><span class="rmp__n">PHASE 1 · MONTHS 1–2</span><h4>Discovery &amp; trust</h4>
+          <ul><li>Caf feed tile</li><li>Expert verified badges</li><li>Specialization tags</li><li>Language filter</li><li>Clear per-minute pricing</li></ul></div>
+        <div class="rmp__p a-pink"><span class="rmp__n">PHASE 2 · MONTHS 3–5</span><h4>Moment prompts &amp; pricing</h4>
+          <ul><li>Post-unmatch modal</li><li>5-minute free trial A/B test</li><li>Tiered pricing</li><li>Wallet recharge packs</li></ul></div>
+        <div class="rmp__p a-green"><span class="rmp__n">PHASE 3 · MONTHS 6–12</span><h4>AI matching &amp; retention</h4>
+          <ul><li>AI expert matching</li><li>Post-session follow-up</li><li>Expert continuity reminders</li><li>Caf subscription bundle experiment</li></ul></div>
+      </div>
+      <div class="flow reveal" role="img" aria-label="Progression from discovery to conversion to retention">
+        <span class="fn fn-blue">DISCOVERY</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="fn fn-amber">CONVERSION</span>
+        <svg class="farr" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8 C 10 5, 20 11, 27 8 M22 3 l6 5 -6 5"/></svg>
+        <span class="fn fn-ink">RETENTION</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 20 · SUPPLY APPENDIX ============ -->
+  <section class="sec" id="appendix">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">20 · APPENDIX</p>
+        <h2 class="sec-title">marketplace health</h2>
+      </header>
+      <div class="tm-twrap reveal">
+        <table class="tm-table">
+          <thead><tr><th>EXPERT TYPE</th><th>ACTIVE</th><th>RATING</th><th>QUARTERLY CHURN</th><th>REVENUE SHARE</th></tr></thead>
+          <tbody>
+            <tr><td>Coaches</td><td>30</td><td>4.6</td><td>12%</td><td>25%</td></tr>
+            <tr><td>Listeners</td><td>55</td><td>4.5</td><td>18%</td><td>20%</td></tr>
+            <tr><td>Astrologers</td><td>25</td><td>4.7</td><td>8%</td><td>30%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="tm-appsum reveal">
+        <li>Top 10–20% of experts drive 60–70% of sessions</li>
+        <li>Listeners show the highest churn</li>
+        <li>Astrologers show the highest rating and lowest churn</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 21 · FINAL RECOMMENDATION ============ -->
+  <section class="sec tm-thesis-sec" id="thesis">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="kicker">21 · FINAL RECOMMENDATION</p>
+        <h2 class="sec-title">TM Caf shouldn't<br/>be a side tab.</h2>
+      </header>
+      <div class="tm-thesis reveal">
+        <p class="tm-thesis__t">TM Caf should be built as a moment-matched emotional support marketplace inside TrulyMadly.</p>
+        <div class="cs-cards">
+          <div class="cs-card a-blue"><span class="cs-card__n mono">01</span><h4>Fix discovery first.</h4><p>Put Caf where users already are.</p></div>
+          <div class="cs-card a-pink"><span class="cs-card__n mono">02</span><h4>Route users at emotional triggers.</h4><p>Timing is the conversion lever.</p></div>
+          <div class="cs-card a-green"><span class="cs-card__n mono">03</span><h4>Make expert trust obvious.</h4><p>Turn first use into repeat behavior.</p></div>
+        </div>
+        <p class="tm-thesis__f">This expands TrulyMadly from dating outcomes into emotional connection outcomes, while creating a potential second revenue engine.</p>
+        <p class="tm-final hand">that's the product I would build first.</p>
+        <a class="btn btn--ink btn--big" id="backBig" href="../index.html">BACK TO PORTFOLIO <svg class="ic" aria-hidden="true"><use href="#i-arr"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MINI FOOTER ============ -->
+<footer class="cs-foot">
+  <div class="wrap">
+    <span class="mono">TM CAF · PRODUCT STRATEGY CAPSTONE · TRULYMADLY</span>
+    <span class="mono">STRATEGY PROPOSAL · TARGETS, NOT RESULTS · © <span id="year">2026</span> MALAVIKA</span>
+    <a class="cs-foot__top mono" href="#top">BACK TO TOP <svg class="ic ic--up" aria-hidden="true"><use href="#i-up"/></svg></a>
+  </div>
+</footer>
+
+<script src="tmcaf.js"></script>
+</body>
+</html>
